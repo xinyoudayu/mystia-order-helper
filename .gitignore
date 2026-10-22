@@ -1,0 +1,25 @@
+# ---- 编译中间产物 ----
+.tmp/
+*.pdb
+*.cache
+
+# ---- 编译输出（发布用 Releases 挂 zip，不入库）----
+dist/
+release/
+
+# ---- 本地备份 / 归档 ----
+backup/
+.acl-recovery/
+
+# ---- 发布包与工具包 ----
+*.zip
+
+# ---- 日志（含本机绝对路径，勿提交）----
+*.log
+
+# ---- 编辑器 / 系统 ----
+.vs/
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

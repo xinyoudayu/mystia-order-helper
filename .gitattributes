@@ -1,0 +1,13 @@
+* text=auto
+
+# Windows 脚本保持 CRLF，避免双击 .bat 时提示符错乱
+*.bat   text eol=crlf
+*.ps1   text eol=crlf
+*.cmd   text eol=crlf
+
+# 文档与原文件统一 LF
+*.md    text eol=lf
+*.cs    text eol=lf
+
+*.dll   binary
+*.zip   binary
