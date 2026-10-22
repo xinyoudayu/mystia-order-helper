@@ -5,7 +5,7 @@
         .\update.ps1                      check; install if a newer version exists
         .\update.ps1 -Check               check only, never install
         .\update.ps1 -Force               reinstall even when the version matches
-        .\update.ps1 -Repo owner/name     override repo (default: git remote of this folder)
+        .\update.ps1 -Repo owner/name     override repo (default: xinyoudayu/mystia-order-helper)
         .\update.ps1 -GamePath "D:\...\Touhou Mystia Izakaya"
         .\update.ps1 -LocalZip <path>     install from a local zip (offline / testing)
         .\update.ps1 -Token <PAT>         access token for a private repo
@@ -22,7 +22,7 @@
 param(
     [switch]$Check,
     [switch]$Force,
-    [string]$Repo = '',
+    [string]$Repo = 'xinyoudayu/mystia-order-helper',
     [string]$GamePath = 'D:\SteamLibrary\steamapps\common\Touhou Mystia Izakaya',
     [string]$ApiBase = 'https://api.github.com',
     [string]$LocalZip = '',
@@ -96,11 +96,17 @@ if ($LocalZip) {
     Write-Step "Repo      : local file $assetName"
 } else {
     if (-not $Repo) {
+        # Optional fallback: derive owner/name from this clone. Never fatal - players
+        # run this script without git installed, and the default above already works.
         $gitDir = Join-Path $PSScriptRoot '.git'
-        if (Test-Path -LiteralPath $gitDir) {
-            $remote = (& git -C $PSScriptRoot remote get-url origin 2>$null)
-            if ($remote -and $remote -match 'github\.com[:/]([^/]+)/([^/\s]+?)(?:\.git)?$') {
-                $Repo = "$($Matches[1])/$($Matches[2])"
+        if ((Test-Path -LiteralPath $gitDir) -and (Get-Command git -ErrorAction SilentlyContinue)) {
+            try {
+                $remote = (& git -C $PSScriptRoot remote get-url origin 2>$null)
+                if ($remote -and $remote -match 'github\.com[:/]([^/]+)/([^/\s]+?)(?:\.git)?$') {
+                    $Repo = "$($Matches[1])/$($Matches[2])"
+                }
+            } catch {
+                $Repo = ''
             }
         }
     }

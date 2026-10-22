@@ -1,4 +1,4 @@
-﻿# 交接文档：夜雀点单助手（Mystia Order Helper）
+# 交接文档：夜雀点单助手（Mystia Order Helper）
 
 > **先读 `MOD制作经验文档.md`**：里面是全部踩坑记录、游戏 API 地图、构建流程和续作指南；本文件只讲项目现状与交接事项。
 
@@ -216,6 +216,9 @@ BG/SellableDescriberWindow_...   → 右侧详情窗（名字/描述），不是
 3. 性能 K7：改为事件驱动收集（客人入座/离店补丁 + 点单补丁），去掉 0.5s 一次的全场扫描。
 4. 字号 K4：字号变化后窗口自适应（注意不能覆盖用户自定义宽高，需要「手动改过就锁住」的标记）。
 5. 交互：推荐列表支持键盘上下选择；窗口最小化。
+6. **下一版打包时把更新器一起塞进 zip**（v1.4.9 的包里没有）：`update.ps1` + `更新.bat` 放在 zip 根（与 `BepInEx\` 同级，`%~dp0update.ps1` 才能找到），安装说明里补「解压到游戏根目录」+「更新后游戏根会多出两个文件和一个 `BepInEx\plugins\_backup\`」两段。注意：已下载 v1.4.9 的人要手动换一次包，从再下一版起才能双击更新。
+7. GitHub 侧已就绪（2026-10-22）：仓库 `xinyoudayu/mystia-order-helper`（Public，27 文件，`0ce1743`）、标签 `v1.4.9`、Release 资产 `MystiaOrderHelper-v1.4.9.zip`（39930 字节）；`update.ps1` 的 5 条分支（全新装/升级/已最新/`-Check`/404）均已实测通过。**Release 资产名必须用 ASCII**，中文名上传后会被截成 `-v1.4.9.zip`。
+8. 坑（2026-10-22 修）：`update.ps1` 原来在 `-Repo` 为空时用 `& git ...` 推导仓库名，玩家机器没装 git 会因 `$ErrorActionPreference='Stop'` 直接崩（`CommandNotFoundException`）；已改为 `$Repo` 默认写死 `xinyoudayu/mystia-order-helper`，git 推导降级为「有 git 且 `.git` 存在才尝试」的可选兜底。
 
 ---
 
