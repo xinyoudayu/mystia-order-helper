@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 using GameData.Core.Collections;
@@ -98,9 +98,8 @@ namespace MystiaOrderHelper
                 OrderHelperPlugin.LogSource.LogWarning("[OrderHelper] 匹配食谱失败: " + e.Message);
             }
 
-            // 先只保「标签对得上」的候选；一道都没有时才退而求其次显示不符的。
-            var hits = result.FindAll(c => c.RequestHit);
-            if (hits.Count > 0) result = hits;
+            // 候选在收集阶段已按点单标签筛过（HasTag），这里不需要再过滤一遍；
+            // RequestHit 只有 FromPanel（特殊厨具）那条路径会设置。
 
             result.Sort((a, b) =>
             {
@@ -225,9 +224,8 @@ namespace MystiaOrderHelper
                 OrderHelperPlugin.LogSource.LogWarning("[OrderHelper] 匹配酒水失败: " + e.Message);
             }
 
-            // 先只保「标签对得上」的候选；一道都没有时才退而求其次显示不符的。
-            var hits = result.FindAll(c => c.RequestHit);
-            if (hits.Count > 0) result = hits;
+            // 候选在收集阶段已按点单标签筛过（HasTag），这里不需要再过滤一遍；
+            // RequestHit 只有 FromPanel（特殊厨具）那条路径会设置。
 
             result.Sort((a, b) =>
             {

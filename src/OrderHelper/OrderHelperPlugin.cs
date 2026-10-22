@@ -21,7 +21,7 @@ namespace MystiaOrderHelper
     {
         public const string Guid = "local.mystia.orderhelper";
         public const string Name = "夜雀点单助手";
-        public const string Version = "1.4.9";
+        public const string Version = "1.5.0";
 
         internal static OrderHelperPlugin Instance;
         internal static ManualLogSource LogSource;

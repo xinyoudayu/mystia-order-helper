@@ -343,6 +343,8 @@ $t.Methods | Where-Object { $_.Name -notmatch 'get_|set_|k__' } | ForEach-Object
 | 0.7.x | 推荐菜不在面板里 → 点不到 | **注入 `m_RecipeInstances` + `UpdateRecipeField`** |
 | 0.7.5-0.7.6 | `OnRecipeElementSelected` 无效 | 放弃该路径，改直填 `selectedIngredients` |
 | 0.7.8 | 分割线透明 | 自建 1×1 纹理 |
+| v1.5.0 | 酒水净分显示虚高 | 配对行里把 `drink.LikeHits`（命中数）当净分用了，改成 `LikeHits - HateHits`；教训：同一行里菜和酒用了两套取值方式，改一个忘一个 |
+| v1.5.0 | `RequestHit` 过滤是死代码 | 该字段默认 `true` 且只有 `FromPanel` 会写，`Find`/`FindBeverages` 里的 `FindAll(c => c.RequestHit)` 恒等于原列表，删除；教训：布尔字段默认值决定「过滤」还是「恒等」，写过滤前先看初始值 |
 | 1.0-1.1 | 操控太重 | F8 主面板 / F9 控制面板 |
 | 1.2.x | 暂停连带冻 UI、光标冻结 | 收窄暂停守卫、只隐藏不冻结 |
 | 1.3.x | 酒水点击错位 | `Extract(sellable)` 按对象取，不按列表索引 |

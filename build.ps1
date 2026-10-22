@@ -1,4 +1,4 @@
-param(
+﻿param(
     [switch]$Install,
     [string]$DotnetRoot = (Join-Path $env:USERPROFILE 'Documents\deepseek-harness\default-workspace\.dotnet'),
     [string]$GamePath = 'D:\SteamLibrary\steamapps\common\Touhou Mystia Izakaya'
@@ -8,7 +8,7 @@ $ErrorActionPreference = 'Stop'
 
 $root    = $PSScriptRoot
 $name    = 'MystiaOrderHelper'
-$version = '1.4.9'
+$version = '1.5.0'
 $sdk     = Join-Path $DotnetRoot 'sdk\6.0.428'
 $csc     = Join-Path $sdk 'Roslyn\bincore\csc.dll'
 $dotnet  = Join-Path $DotnetRoot 'dotnet.exe'

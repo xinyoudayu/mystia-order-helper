@@ -1,11 +1,11 @@
-# 交接文档：夜雀点单助手（Mystia Order Helper）
+﻿# 交接文档：夜雀点单助手（Mystia Order Helper）
 
 > **先读 `MOD制作经验文档.md`**：里面是全部踩坑记录、游戏 API 地图、构建流程和续作指南；本文件只讲项目现状与交接事项。
 
-- 交接时间：2026-10-22 21:40（v1.4.9 收尾：推荐/评分显示重做 + 三个窗口布局可调与记忆）
-- 当前版本：**v1.4.9**（`dist\MystiaOrderHelper-v1.4.9.dll`，安装包 `夜雀点单助手-v1.4.9.zip`）
+- 交接时间：2026-10-22 22:55（v1.5.0：修酒水净分显示 + 清理死代码 + 包内附自动更新脚本）
+- 当前版本：**v1.5.0**（`dist\MystiaOrderHelper-v1.5.0.dll`，安装包 `夜雀点单助手-v1.5.0.zip`）
 - 环境：Windows，游戏装在 `<游戏目录>`（Steam 库路径因人而异）
-- 本阶段收尾点：v1.4.9 已打包，待用户实机复验
+- 本阶段收尾点：v1.5.0 已打包（zip 内含自动更新脚本），待用户实机复验
 
 ---
 
@@ -71,7 +71,7 @@
 ├─ game.ps1                 启停/重启/状态：start | stop | restart | status
 ├─ dev.ps1                  构建并重启（无 -Force 时若游戏在跑则拒绝）
 ├─ start.bat / stop.bat / dev.bat
-├─ dist\                    编译产物 MystiaOrderHelper-v1.4.9.dll
+├─ dist\                    编译产物 MystiaOrderHelper-v1.5.0.dll
 ├─ backup\                  旧插件与旧版本备份（old-plugins\ 等，不随安装包发布）
 ├─ docs\
 │   ├─ M0-侦察结果.md        IL2CPP 类型侦察原始结论
@@ -98,7 +98,7 @@
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "<项目目录>\build.ps1"
 ```
 
-产物：`dist\MystiaOrderHelper-v1.4.9.dll`（约 83 KB）。
+产物：`dist\MystiaOrderHelper-v1.5.0.dll`（约 82.5 KB）。
 
 注意事项（都是踩过的坑）：
 
@@ -116,9 +116,9 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "<项目目录>\game.ps1
 # 旧 dll 先归档（别直接删），再放新 dll
 New-Item -ItemType Directory -Force "<项目目录>\backup\old-plugins" | Out-Null
 Get-ChildItem "<游戏目录>\BepInEx\plugins" -Filter "MystiaOrderHelper-v*.dll" |
-    Where-Object { $_.Name -ne "MystiaOrderHelper-v1.4.9.dll" } |
+    Where-Object { $_.Name -ne "MystiaOrderHelper-v1.5.0.dll" } |
     Move-Item -Destination "<项目目录>\backup\old-plugins" -Force
-Copy-Item "<项目目录>\dist\MystiaOrderHelper-v1.4.9.dll" "<游戏目录>\BepInEx\plugins\" -Force
+Copy-Item "<项目目录>\dist\MystiaOrderHelper-v1.5.0.dll" "<游戏目录>\BepInEx\plugins\" -Force
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File "<项目目录>\game.ps1" start
 ```
 
@@ -128,7 +128,7 @@ powershell.exe -NoProfile -ExecutionPolicy Bypass -File "<项目目录>\game.ps1
 Select-String -Path "<游戏目录>\BepInEx\LogOutput.log" -Pattern "夜雀点单助手 v1\.4\.9" -Encoding UTF8 | Select-Object -Last 1
 ```
 
-期望看到：`夜雀点单助手 v1.4.9 已加载（F8 主面板，F9 控制面板）`。
+期望看到：`夜雀点单助手 v1.5.0 已加载（F8 主面板，F9 控制面板）`。
 
 > 版本号要同时改两处：`src\OrderHelper\OrderHelperPlugin.cs` 的 `Version` 和 `build.ps1` 的 `$version`。
 
@@ -211,13 +211,13 @@ BG/SellableDescriberWindow_...   → 右侧详情窗（名字/描述），不是
 
 ## 6 下次继续的建议顺序
 
-1. ~~酒水直填~~ 已完成（v1.3.1）；~~推荐框位置记忆~~ 已完成（v1.4.9，三个窗口通用）；~~打包发布~~ 已完成（`夜雀点单助手-v1.4.9.zip`）。
-2. **等用户实机复验 v1.4.9**：配对显示、净分、稀客只推粉评、已上菜客人剔除、布局记忆。
+1. ~~酒水直填~~ 已完成（v1.3.1）；~~推荐框位置记忆~~ 已完成（v1.4.9，三个窗口通用）；~~打包发布~~ 已完成（`夜雀点单助手-v1.5.0.zip`）；~~包内附更新脚本~~ 已完成（v1.5.0）。
+2. **等用户实机复验 v1.5.0**：配对显示、净分（含酒水净分已修正）、稀客只推粉评、已上菜客人剔除、布局记忆、双击 `更新.bat` 能识别已是最新。
 3. 性能 K7：改为事件驱动收集（客人入座/离店补丁 + 点单补丁），去掉 0.5s 一次的全场扫描。
 4. 字号 K4：字号变化后窗口自适应（注意不能覆盖用户自定义宽高，需要「手动改过就锁住」的标记）。
 5. 交互：推荐列表支持键盘上下选择；窗口最小化。
-6. **下一版打包时把更新器一起塞进 zip**（v1.4.9 的包里没有）：`update.ps1` + `更新.bat` 放在 zip 根（与 `BepInEx\` 同级，`%~dp0update.ps1` 才能找到），安装说明里补「解压到游戏根目录」+「更新后游戏根会多出两个文件和一个 `BepInEx\plugins\_backup\`」两段。注意：已下载 v1.4.9 的人要手动换一次包，从再下一版起才能双击更新。
-7. GitHub 侧已就绪（2026-10-22）：仓库 `xinyoudayu/mystia-order-helper`（Public，27 文件，`0ce1743`）、标签 `v1.4.9`、Release 资产 `MystiaOrderHelper-v1.4.9.zip`（39930 字节）；`update.ps1` 的 5 条分支（全新装/升级/已最新/`-Check`/404）均已实测通过。**Release 资产名必须用 ASCII**，中文名上传后会被截成 `-v1.4.9.zip`。
+6. ~~下一版打包时把更新器一起塞进 zip~~ 已完成（v1.5.0）：`update.ps1` + `更新.bat` 放在 zip 根（与 `BepInEx\` 同级，`%~dp0update.ps1` 才能找到），安装说明已补「解压到游戏根目录」与「更新后多出 `BepInEx\plugins\_backup\`」两段。注意：已装 v1.4.9 的人要手动换一次包，之后才能双击更新。
+7. GitHub 侧（2026-10-22）：仓库 `xinyoudayu/mystia-order-helper`（Public），`v1.4.9` 的 tag 与 Release 资产 `MystiaOrderHelper-v1.4.9.zip`（39930 字节）已发布；`update.ps1` 的 5 条分支（全新装/升级/已最新/`-Check`/404）均已实测通过。**v1.5.0 待发布**：`git tag v1.5.0` + Release 上传 `夜雀点单助手-v1.5.0.zip`（资产名同样必须 ASCII，建议 `MystiaOrderHelper-v1.5.0.zip`）。
 8. 坑（2026-10-22 修）：`update.ps1` 原来在 `-Repo` 为空时用 `& git ...` 推导仓库名，玩家机器没装 git 会因 `$ErrorActionPreference='Stop'` 直接崩（`CommandNotFoundException`）；已改为 `$Repo` 默认写死 `xinyoudayu/mystia-order-helper`，git 推导降级为「有 git 且 `.git` 存在才尝试」的可选兜底。
 
 ---
@@ -264,6 +264,7 @@ BG/SellableDescriberWindow_...   → 右侧详情窗（名字/描述），不是
 | v1.4.5-1.4.6 | 离席客人过滤（HaveNotLeft + RemainOrderCount 兜底）；特殊厨具按点单标签优先排序 |
 | v1.4.7 | 离店客人补丁：GuestGroupController.MoveToSpawn / FlyToSpawn → 标记已离开，推荐框剔除 |
 | v1.4.8 | 三位一体：复用普通厨具 top4 推荐，只保留其能做的；未点单不推荐；已打包 夜雀点单助手-v1.4.8.zip |
+| v1.5.0 | ①修主面板配对的「酒水净分」显示错误：原先把 `drink.LikeHits`（命中数）当净分，踩厌恶标签时虚高，改用 `Net(drink)`；②删掉 `Find`/`FindBeverages` 里永不生效的 `RequestHit` 过滤（`RequestHit` 默认 true、只有 `FromPanel` 会写，两处过滤恒等于原列表），行为不变、去掉误导；③安装包内附 `update.ps1` + `更新.bat`（自动更新改用 GitHub Releases，不依赖 git）。|
 | v1.4.9 | ①推荐显示重做为「菜 + 酒 配对」：每条给出菜（含厨具）+ 酒水 + 评级 + 合计分 + 「净X分」；②稀客只推能粉评（合计 ≥4）的组合，凑不出则分列「命中标签最多的菜 / 酒水」；常客不限；③修 `Score` 覆盖后不重排导致的「下面粉评上面绿评」；④修厌恶标签读取失败（`IEnumerable<int>` 强转 bug），厌恶扣分终于生效；⑤稀客 tag 负值语义查清：`-1` = 无此项 → 未点单显示「（尚未点单）」、酒水不限按喜好推荐；⑥已上菜（`IsFullfilled`）的客人不再进推荐框；⑦缺料文案改食材名 `缺食材：牛肉(0/2)`；⑧三个窗口（主面板/料理框/酒水框）位置与大小可在 F9 控制面板调 + 拖动 + 写入 `[Layout]` 记忆 + 退出时兜底保存；⑨三位一体候选补算评价（修「空评级 合计0分」） |
 
 ## 9 经验文档

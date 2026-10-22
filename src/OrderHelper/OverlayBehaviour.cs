@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -1335,7 +1335,7 @@ namespace MystiaOrderHelper
                 var cooker = string.IsNullOrEmpty(dish.Cooker) ? "" : $"[{dish.Cooker}]";
                 GUILayout.Label($"    → {dish.Name}{cooker}{dishState}＋{drinkName}{drinkState}");
                 GUILayout.Label($"       {pair.Rating}{pair.TotalPoints}分{gap}  ｜ 净分 菜{Net(dish)}" +
-                                (drink != null ? $" 酒{drink.LikeHits}" : ""));
+                                (drink != null ? $" 酒{Net(drink)}" : ""));
             }
         }
 
