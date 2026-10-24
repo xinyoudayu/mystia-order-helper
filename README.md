@@ -5,7 +5,8 @@
 - 游戏版本：0.29.4（Unity 2021.3.28f1 / IL2CPP）
 - 前置：BepInEx 6.0.0-be.785（IL2CPP x64）
 - 当前版本：**v1.6.7**（修卡顿：头像全场扫图降频 + 扫描预算真正生效 + 采集节拍 0.8 秒；已装机）
-- 发布包：`release\夜雀点单助手-v1.6.7.zip`（上传 GitHub Release 用 `release\MystiaOrderHelper-v1.6.7.zip`）
+- 下载：**[Releases → v1.6.7](https://github.com/xinyoudayu/mystia-order-helper/releases/latest)**（下 `MystiaOrderHelper-v1.6.7.zip`，解压后把 dll 放进 `BepInEx/plugins/`）
+- 发布包：`release\夜雀点单助手-v1.6.7.zip`（给人下）/ `release\MystiaOrderHelper-v1.6.7.zip`（Release 资产名，必须 ASCII）
 - 上一稳定版：**v1.5.2**（采集性能优化 + 稀客影像识别，已实测通过）
 
 ## 功能

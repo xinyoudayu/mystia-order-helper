@@ -401,12 +401,22 @@ BG/SellableDescriberWindow_...   → 右侧详情窗（名字/描述），不是
      ③ `采集` 次数 30 秒约 37 次（节拍 0.8s），`头像·扫描` 均值应从 46ms 掉到个位数；
      ④ 但要注意：**如果 `采集·枚举` 仍然出现 200ms+ 的孤立尖峰**，那是 il2cpp 元数据/GC，不是这次改的部分，
      需要另开一刀（目前判断影响很小，一次而已）。
-3. **发布到 GitHub**：仓库 `xinyoudayu/mystia-order-helper`（Public）目前只发到 `v1.4.9`。
-   v1.5.0–v1.6.7 都还没发 Release，`更新.bat` 现在对老用户来说"已是最新"。
-   要发的话：`git tag v1.6.7` + Release 上传 `release\MystiaOrderHelper-v1.6.7.zip`，
-   **资产名必须是 ASCII**（`update.ps1` 按 `MystiaOrderHelper-v*` 匹配）。
+3. ~~发布到 GitHub~~ **已完成（2026-10-24 22:40，v1.6.7）**：
+   仓库 `xinyoudayu/mystia-order-helper`（Public），main 已推到 `d84ba62`，tag `v1.6.7`，
+   Release：`https://github.com/xinyoudayu/mystia-order-helper/releases/tag/v1.6.7`
+   （asset `MystiaOrderHelper-v1.6.7.zip`，85904 字节，`releases/latest` 已指向它，
+   下载链接实测 HTTP 200）。v1.5.0–v1.6.6 作为**累积更新写进这一个 Release 的说明**，没有单独建 tag。
+   **下次发版的四步**（照抄即可）：
+   1. 改三处版本号（`OrderHelperPlugin.Version` / `build.ps1` / `make-release.py NOTES`）；
+   2. `build.ps1 -Install` 装机 + 备份旧版；`python tools\make-release.py` 出包；
+   3. `git add -A && git commit -F - <<'EOF' … EOF`，`git tag -a vX.Y.Z -m "…"`，`git push origin main && git push origin vX.Y.Z`；
+   4. Release 用 API 建（本机没有 `gh`，走 `git credential fill` 拿 token + `api.github.com`）：
+      先 `POST /repos/{owner}/{repo}/releases`（`tag_name` / `name` / `body` / `make_latest:true`），
+      再 `POST uploads.github.com/repos/{owner}/{repo}/releases/{id}/assets?name=MystiaOrderHelper-vX.Y.Z.zip`。
+   **资产名必须是 ASCII**（`update.ps1` 按 `MystiaOrderHelper-v*` 匹配），`draft` / `prerelease` 必须为 false，
+   否则 `releases/latest` 不认、老用户点 `更新.bat` 会显示"已是最新"。
    > 注：发 Release 属于"改变远端可见状态"，动手前先跟用户确认。
-4. 性能 K7：改为事件驱动收集（客人入座/离店补丁 + 点单补丁），去掉 0.5s 一次的全场扫描。
+4. 性能 K7：改为事件驱动收集（客人入座/离店补丁 + 点单补丁），去掉 0.8s 一次的轮询（v1.6.7 已把「开关类操作」改成事件，这里要改的是「客人到店/点单」）。
 5. 字号 K4：字号变化后窗口自适应（注意不能覆盖用户自定义宽高，需要「手动改过就锁住」的标记）。
 6. 交互：推荐列表支持键盘上下选择；窗口最小化。
 7. 批4（菜品/酒水图标）：`GetSellabeBGSprite_Public_Static_Sprite_Sellable_0` 传 `Sellable` 返回 `Sprite`，
