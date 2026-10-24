@@ -1,0 +1,1657 @@
+﻿=== 夜雀点单助手 · UI 侦察 ===
+触发: F10 手动（手动可按多次，每次重写 dump 与样例图）
+时间: 2026-10-23 12:31:19
+frame: 17868   场景: Work
+Image 组件: 5118
+
+## 一、订单卡 / 座位号相关（路径或图名含 order / card / seat / guest / icon）
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)2/StaticBuffArea/SatoriEyeDisplayer(Clone)/OrderCountImage
+      sprite=时焉侑_审判之眼_2  rect=14x18  texture=sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  packed  texRect=(85,22 14x18)  border=(0,0,0,0)  显示=14x18  active=False
+  Canvas/MainWindow/Front_Frame/RecievedMoneyDisplayer /OrderCostMessageElement(Clone)/Image
+      sprite=OrderCost  rect=36x25  texture=TipNotify 95x68  texRect=(7,38 36x25)  border=(0,0,0,0)  显示=36x25  active=False
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)5/StaticBuffArea/SatoriEyeDisplayer(Clone)/OrderCountImage
+      sprite=时焉侑_审判之眼_2  rect=14x18  texture=sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  packed  texRect=(85,22 14x18)  border=(0,0,0,0)  显示=14x18  active=False
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)7/StaticBuffArea/SatoriEyeDisplayer(Clone)/OrderCountImage
+      sprite=时焉侑_审判之眼_2  rect=14x18  texture=sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  packed  texRect=(85,22 14x18)  border=(0,0,0,0)  显示=14x18  active=False
+  Canvas/MainWindow/Front_Frame/PartnerStateDisplayer/PartnerStatusElement(Clone)/StatusField/TableIDBG
+      sprite=Night_Partner_UI_30  rect=20x20  texture=sactx-0-1024x1024-BC7-DaySceneIzakayaSelectionPannel_Atlas-ce3d2777 1024x1024  packed  texRect=(368,606 20x20)  border=(0,0,0,0)  显示=20x20  active=False
+  Canvas/MainWindow/Front_Frame/PartnerStateDisplayer/PartnerStatusElement(Clone)/StatusField/TableIDBG
+      sprite=Night_Partner_UI_30  rect=20x20  texture=sactx-0-1024x1024-BC7-DaySceneIzakayaSelectionPannel_Atlas-ce3d2777 1024x1024  packed  texRect=(368,606 20x20)  border=(0,0,0,0)  显示=20x20  active=False
+  Canvas/MainWindow/Front_Frame/PartnerStateDisplayer/PartnerStatusElement(Clone)/StatusField/TableIDBG
+      sprite=Night_Partner_UI_30  rect=20x20  texture=sactx-0-1024x1024-BC7-DaySceneIzakayaSelectionPannel_Atlas-ce3d2777 1024x1024  packed  texRect=(368,606 20x20)  border=(0,0,0,0)  显示=20x20  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/SpecialFinishIndicator/Food
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=True
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/SpecialFinishIndicator/Bev
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=True
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/NormalFinishIndicator/Bev
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=True
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/NormalFinishIndicator/Food
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=True
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/SpecialObject/Front
+      sprite=CharFrame  rect=48x48  texture=sactx-0-2048x2048-BC7-WorkSceneSustainedPannel_Atlas-87d2e595 2048x2048  packed  texRect=(200,1248 48x48)  border=(0,0,0,0)  显示=48x48  active=True
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/SpecialObject/Face
+      sprite=慧音Eyes_0, 1  rect=64x64  texture=sactx-0-2048x2048-BC7-Core_SpecialAndDaySceneNPC-f44c7e7e 2048x2048  packed  texRect=(1940,230 24x13)  border=(0,0,0,0)  显示=64x64  active=True
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/SpecialObject/Char
+      sprite=慧音Main_0, 1  rect=64x64  texture=sactx-0-2048x2048-BC7-Core_SpecialAndDaySceneNPC-f44c7e7e 2048x2048  packed  texRect=(1212,793 44x64)  border=(0,0,0,0)  显示=64x64  active=True
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/SpecialObject
+      sprite=CharBG  rect=48x48  texture=sactx-0-2048x2048-BC7-WorkSceneSustainedPannel_Atlas-87d2e595 2048x2048  packed  texRect=(383,936 48x48)  border=(0,0,0,0)  显示=48x48  active=True
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Bev/PartnerStatusUp
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=18x18  active=True
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Bev/Visual
+      sprite=Beverages_4(Clone)  rect=26x26  texture=sactx-0-512x512-BC7-Core_ItemSprites-f7e71b15 512x512  packed  texRect=(210,30 26x26)  border=(0,0,0,0)  显示=52x52  active=True
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Food/PartnerStatusDown
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=18x18  active=True
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Food/Visual
+      sprite=DLC1_Foods_1017(Clone)  rect=26x26  texture=sactx-0-256x256-BC7-DLC1_ItemSprites-69b6440b 256x256  packed  texRect=(90,60 26x26)  border=(0,0,0,0)  显示=52x52  active=True
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/OrderBG_Current
+      sprite=OrderReceipt_BG_1  rect=32x66  texture=sactx-0-2048x1024-BC7-Work_Atlas-6078d498 2048x1024  packed  texRect=(1304,406 32x66)  border=(10,6,10,14)  显示=32x66  active=True
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/OrderBG_Normal
+      sprite=OrderReceipt_BG_0  rect=32x66  texture=sactx-0-2048x1024-BC7-Work_Atlas-6078d498 2048x1024  packed  texRect=(1601,0 32x66)  border=(10,6,10,14)  显示=32x66  active=True
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/SpecialFinishIndicator/Food
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/SpecialFinishIndicator/Bev
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/NormalFinishIndicator/Bev
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/NormalFinishIndicator/Food
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=False
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/SpecialObject/Front
+      sprite=CharFrame  rect=48x48  texture=sactx-0-2048x2048-BC7-WorkSceneSustainedPannel_Atlas-87d2e595 2048x2048  packed  texRect=(200,1248 48x48)  border=(0,0,0,0)  显示=48x48  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/SpecialObject
+      sprite=CharBG  rect=48x48  texture=sactx-0-2048x2048-BC7-WorkSceneSustainedPannel_Atlas-87d2e595 2048x2048  packed  texRect=(383,936 48x48)  border=(0,0,0,0)  显示=48x48  active=False
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Bev/PartnerStatusDown
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=18x18  active=False
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Bev/PartnerStatusUp
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=18x18  active=False
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Food/PartnerStatusDown
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=18x18  active=False
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Food/PartnerStatusUp
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=18x18  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/OrderBG_Current
+      sprite=OrderReceipt_BG_1  rect=32x66  texture=sactx-0-2048x1024-BC7-Work_Atlas-6078d498 2048x1024  packed  texRect=(1304,406 32x66)  border=(10,6,10,14)  显示=32x66  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/OrderBG_Normal
+      sprite=OrderReceipt_BG_0  rect=32x66  texture=sactx-0-2048x1024-BC7-Work_Atlas-6078d498 2048x1024  packed  texRect=(1601,0 32x66)  border=(10,6,10,14)  显示=32x66  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/SpecialFinishIndicator/Food
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/SpecialFinishIndicator/Bev
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/NormalFinishIndicator/Bev
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/NormalFinishIndicator/Food
+      sprite=Check  rect=32x32  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(965,0 32x24)  border=(0,0,0,0)  显示=32x32  active=False
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/SpecialObject/Front
+      sprite=CharFrame  rect=48x48  texture=sactx-0-2048x2048-BC7-WorkSceneSustainedPannel_Atlas-87d2e595 2048x2048  packed  texRect=(200,1248 48x48)  border=(0,0,0,0)  显示=48x48  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/SpecialObject
+      sprite=CharBG  rect=48x48  texture=sactx-0-2048x2048-BC7-WorkSceneSustainedPannel_Atlas-87d2e595 2048x2048  packed  texRect=(383,936 48x48)  border=(0,0,0,0)  显示=48x48  active=False
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Bev/PartnerStatusDown
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=18x18  active=False
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Bev/PartnerStatusUp
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=18x18  active=False
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Food/PartnerStatusDown
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=18x18  active=False
+  MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/ElementField/NormalObject_Food/PartnerStatusUp
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=18x18  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/OrderBG_Current
+      sprite=OrderReceipt_BG_1  rect=32x66  texture=sactx-0-2048x1024-BC7-Work_Atlas-6078d498 2048x1024  packed  texRect=(1304,406 32x66)  border=(10,6,10,14)  显示=32x66  active=False
+  Canvas/MainWindow/Front_Frame/Order/Order/Order(Clone)/DampingFleld/MovingField/OrderBG_Normal
+      sprite=OrderReceipt_BG_0  rect=32x66  texture=sactx-0-2048x1024-BC7-Work_Atlas-6078d498 2048x1024  packed  texRect=(1601,0 32x66)  border=(10,6,10,14)  显示=32x66  active=False
+  Canvas/MainWindow/UIPannelRoot/FlattenedFilterPanel(Clone)/LayoutBG
+      sprite=NoteBook_BG_Album_Item_Detail_Bordered  rect=440x414  texture=NoteBook_BG_Album_Item_Detail_Bordered 440x414  texRect=(0,0 440x414)  border=(11,8,8,8)  显示=98x124  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/LargeFont/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/LargeFont/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/LargeFont/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/LegacyThrowDeliver/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/LegacyThrowDeliver/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/LegacyThrowDeliver/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/LegacyQTE/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/LegacyQTE/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/LegacyQTE/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/RunInBackground/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/RunInBackground/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/RunInBackground/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=True
+  MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/Calibration/Bar (1)/InteractableScrollbar/ProgressHandle
+      sprite=Button_Switch_2  rect=70x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(0,181 70x23)  border=(14,0,16,0)  显示=164x23  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/Calibration/Bar (1)/InteractableScrollbar
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=300x23  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/VSync/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/VSync/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/VSync/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/EnableSpellCutin/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/EnableSpellCutin/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/EnableSpellCutin/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=True
+  MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/SoundFxVolume/Bar/InteractableScrollbar/ProgressHandle
+      sprite=Button_Switch_2  rect=70x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(0,181 70x23)  border=(14,0,16,0)  显示=165x23  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/SoundFxVolume/Bar/InteractableScrollbar
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=300x23  active=True
+  MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/MusicVolume/Bar/InteractableScrollbar/ProgressHandle
+      sprite=Button_Switch_2  rect=70x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(0,181 70x23)  border=(14,0,16,0)  显示=165x23  active=True
+  Canvas/MainWindow/UIPannelRoot/EscMenu_MainPannel(Clone)/EscPannelRoot/EscMenu_ConfigPannel(Clone)/Options/MusicVolume/Bar/InteractableScrollbar
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=300x23  active=True
+  UIPannelRoot/NoteBook_MainPannel(Clone)/FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/BtnSet/SpellCard/On
+      sprite=Button_Album_GuestTab  rect=98x46  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1777,917 58x46)  border=(0,0,0,0)  显示=98x46  active=True
+  MainWindow/UIPannelRoot/NoteBook_MainPannel(Clone)/FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/BtnSet/SpellCard
+      sprite=NoteBook_BG_Album_Guest_Tabs_0  rect=53x46  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(294,1930 53x46)  border=(5,5,0,5)  显示=53x46  active=True
+  PartnerStatusElement/StatusField/TableIDBG
+      sprite=Night_Partner_UI_30  rect=20x20  texture=sactx-0-1024x1024-BC7-DaySceneIzakayaSelectionPannel_Atlas-ce3d2777 1024x1024  packed  texRect=(368,606 20x20)  border=(0,0,0,0)  显示=0x0  active=False
+  EscMenu_ConfigPannel/Options/MusicVolume/Bar/InteractableScrollbar
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=300x23  active=False
+  EscMenu_ConfigPannel/Options/EnableSpellCutin/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/EnableSpellCutin/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/Calibration/Bar (1)/InteractableScrollbar/ProgressHandle
+      sprite=Button_Switch_2  rect=70x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(0,181 70x23)  border=(14,0,16,0)  显示=117x23  active=False
+  EscMenu_ConfigPannel/Options/VSync/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/SoundFxVolume/Bar/InteractableScrollbar/ProgressHandle
+      sprite=Button_Switch_2  rect=70x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(0,181 70x23)  border=(14,0,16,0)  显示=117x23  active=False
+  EscMenu_ConfigPannel/Options/RunInBackground/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=False
+  EscMenu_ConfigPannel/Options/LargeFont/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/LargeFont/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=False
+  EscMenu_ConfigPannel/Options/LargeFont/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/RunInBackground/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/LegacyQTE/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/LegacyQTE/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=False
+  EscMenu_ConfigPannel/Options/Calibration/Bar (1)/InteractableScrollbar
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=300x23  active=False
+  EscMenu_ConfigPannel/Options/MusicVolume/Bar/InteractableScrollbar/ProgressHandle
+      sprite=Button_Switch_2  rect=70x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(0,181 70x23)  border=(14,0,16,0)  显示=117x23  active=False
+  EscMenu_ConfigPannel/Options/LegacyThrowDeliver/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=False
+  EscMenu_ConfigPannel/Options/VSync/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/RunInBackground/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/VSync/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=False
+  EscMenu_ConfigPannel/Options/LegacyThrowDeliver/InteractableToggle/Off
+      sprite=Esc_Toggle_1  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(407,188 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/EnableSpellCutin/InteractableToggle
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=0x0  active=False
+  EscMenu_ConfigPannel/Options/SoundFxVolume/Bar/InteractableScrollbar
+      sprite=Button_Switch_1  rect=71x23  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(332,188 71x23)  border=(13,0,14,0)  显示=300x23  active=False
+  EscMenu_ConfigPannel/Options/LegacyThrowDeliver/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  EscMenu_ConfigPannel/Options/LegacyQTE/InteractableToggle/On
+      sprite=Esc_Toggle_0  rect=67x19  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(657,182 67x19)  border=(0,0,0,0)  显示=67x19  active=False
+  FlattenedFilterPanel/LayoutBG
+      sprite=NoteBook_BG_Album_Item_Detail_Bordered  rect=440x414  texture=NoteBook_BG_Album_Item_Detail_Bordered 440x414  texRect=(0,0 440x414)  border=(11,8,8,8)  显示=0x0  active=False
+  Detail_SpellCard/GotoDescriptionToggle
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=107x41  active=False
+  Detail_SpellCard_Compact/Negative/NegativeLayout/Title/Icon
+      sprite=NoteBook_Album_SC_bg_Alt_2  rect=97x106  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(0,1892 97x106)  border=(0,0,0,0)  显示=97x106  active=False
+  Detail_SpellCard_Compact/Positive/PositiveLayout/BG
+      sprite=NoteBook_Album_SC_bg_Alt_1  rect=399x165  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1294,1561 399x165)  border=(13,17,19,10)  显示=0x0  active=False
+  Detail_SpellCard/GotoInfoToggle/GotoInfoToggle_On
+      sprite=NoteBook_Tab_Album_Character_0  rect=102x37  texture=NoteBook_Tab_Album_Character 224x96  texRect=(6,56 102x37)  border=(0,0,0,0)  显示=102x37  active=False
+  Detail_SpellCard/GotoInfoToggle/GotoInfoToggle_Off
+      sprite=NoteBook_Tab_Album_Character_3  rect=102x30  texture=NoteBook_Tab_Album_Character 224x96  texRect=(116,4 102x30)  border=(0,0,0,0)  显示=102x30  active=False
+  NoteBook_AlbumGuestSubPannel/BtnSet/SpellCard/On
+      sprite=Button_Album_GuestTab  rect=98x46  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1777,917 58x46)  border=(0,0,0,0)  显示=98x46  active=False
+  Detail_SpellCard/GotoInfoToggle
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=102x37  active=False
+  Detail_SpellCard_Compact/Negative/NegativeLayout/BG
+      sprite=NoteBook_Album_SC_bg_Alt_3  rect=399x165  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(0,1723 399x165)  border=(13,17,19,10)  显示=0x0  active=False
+  Detail_SpellCard/Negative/NegativeLayout/BG
+      sprite=NoteBook_Album_SC_bg_Alt_3  rect=399x165  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(0,1723 399x165)  border=(13,17,19,10)  显示=0x0  active=False
+  Detail_SpellCard/Positive/PositiveLayout/Title/Icon
+      sprite=NoteBook_Album_SC_bg_Alt_0  rect=97x106  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(854,1848 97x106)  border=(0,0,0,0)  显示=97x106  active=False
+  Detail_SpellCard/Negative/NegativeLayout/Title/Icon
+      sprite=NoteBook_Album_SC_bg_Alt_2  rect=97x106  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(0,1892 97x106)  border=(0,0,0,0)  显示=97x106  active=False
+  Detail_SpellCard/Positive/PositiveLayout/BG
+      sprite=NoteBook_Album_SC_bg_Alt_1  rect=399x165  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1294,1561 399x165)  border=(13,17,19,10)  显示=0x0  active=False
+  NoteBook_AlbumGuestSubPannel/BtnSet/SpellCard
+      sprite=NoteBook_BG_Album_Guest_Tabs_0  rect=53x46  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(294,1930 53x46)  border=(5,5,0,5)  显示=53x46  active=False
+  Detail_SpellCard_Compact/Positive/PositiveLayout/Title/Icon
+      sprite=NoteBook_Album_SC_bg_Alt_0  rect=97x106  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(854,1848 97x106)  border=(0,0,0,0)  显示=97x106  active=False
+  Detail_SpellCard/GotoDescriptionToggle/GotoDescriptionToggle_Off
+      sprite=NoteBook_Tab_Album_Character_1  rect=107x28  texture=NoteBook_Tab_Album_Character 224x96  texRect=(113,55 107x28)  border=(0,0,0,0)  显示=107x28  active=False
+  Detail_SpellCard/GotoDescriptionToggle/GotoDescriptionToggle_On
+      sprite=NoteBook_Tab_Album_Character_2  rect=107x41  texture=NoteBook_Tab_Album_Character 224x96  texRect=(2,4 107x41)  border=(0,0,0,0)  显示=107x41  active=False
+  SatoriEyeDisplayer/OrderCountImage
+      sprite=时焉侑_审判之眼_2  rect=14x18  texture=sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  packed  texRect=(85,22 14x18)  border=(0,0,0,0)  显示=14x18  active=False
+  DLC4_FlandreHomeDecorationStorageTabs/AlbumSubTabs/IngTitle/Table
+      sprite=NoteBook_BG_Album_Item_Tab_Idle_0  rect=81x32  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1057,1848 81x32)  border=(10,1,12,8)  显示=10x0  active=False
+  DLC4_FlandreHomeDecorationStorageTabs/AlbumSubTabs/IngTitle/Table/On
+      sprite=NoteBook_BG_Album_Item_Tab_Idle_2  rect=81x31  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(898,1005 81x31)  border=(10,0,12,8)  显示=10x2  active=False
+  IzakayaDetailPanel/Frame/MainData/DeskData (1)/GuestTableCount/CookingDesk
+      sprite=colliders_50x_23  rect=50x50  texture=sactx-0-512x512-DXT5|BC3-colliders_50x_Atlas-1a886289 512x512  packed  texRect=(0,0 0x0)  border=(0,0,0,0)  显示=50x50  active=False
+  IzakayaSelectionPanel_New Variant/MainObjects/PartnerContainer/PartnerSelection/BG/InteractableElement
+      sprite=clear  rect=3x3  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(512,197 3x3)  border=(1,1,1,1)  显示=131x52  active=False
+  IzakayaDetailPanel/Frame/MainData/DeskData (1)/GuestTableCount/Title
+      sprite=Asset_004_32x32_3  rect=96x32  texture=sactx-0-128x128-BC7-Common_IngredientTag_Atlas-4f63b127 128x128  packed  texRect=(0,0 96x32)  border=(8,4,7,4)  显示=115x31  active=False
+  …… 另有 30 条同类命中未列出
+
+## 二、疑似客人头像（图名含 guest / head / face / portrait / chara）
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)2/StaticBuffArea/SatoriEyeDisplayer(Clone)/OrderCountImage
+      sprite=时焉侑_审判之眼_2  rect=14x18  texture=sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  packed  texRect=(85,22 14x18)  border=(0,0,0,0)  显示=14x18  active=False
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)2/StaticBuffArea/SatoriEyeDisplayer(Clone)/FundImage
+      sprite=DLC2_Items_2003  rect=26x26  texture=sactx-0-256x256-BC7-DLC2_ItemSprites-0cee4c3a 256x256  packed  texRect=(180,160 26x26)  border=(0,0,0,0)  显示=26x26  active=True
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)2/StaticBuffArea/SatoriEyeDisplayer(Clone)
+      sprite=时焉侑_审判之眼_0  rect=81x54  texture=sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  packed  texRect=(0,0 81x54)  border=(0,0,0,0)  显示=81x54  active=True
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)5/StaticBuffArea/SatoriEyeDisplayer(Clone)/OrderCountImage
+      sprite=时焉侑_审判之眼_2  rect=14x18  texture=sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  packed  texRect=(85,22 14x18)  border=(0,0,0,0)  显示=14x18  active=False
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)5/StaticBuffArea/SatoriEyeDisplayer(Clone)/FundImage
+      sprite=DLC2_Items_2003  rect=26x26  texture=sactx-0-256x256-BC7-DLC2_ItemSprites-0cee4c3a 256x256  packed  texRect=(180,160 26x26)  border=(0,0,0,0)  显示=26x26  active=True
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)5/StaticBuffArea/SatoriEyeDisplayer(Clone)
+      sprite=时焉侑_审判之眼_0  rect=81x54  texture=sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  packed  texRect=(0,0 81x54)  border=(0,0,0,0)  显示=81x54  active=True
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)7/StaticBuffArea/SatoriEyeDisplayer(Clone)/OrderCountImage
+      sprite=时焉侑_审判之眼_2  rect=14x18  texture=sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  packed  texRect=(85,22 14x18)  border=(0,0,0,0)  显示=14x18  active=False
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)7/StaticBuffArea/SatoriEyeDisplayer(Clone)/FundImage
+      sprite=DLC2_Items_2003  rect=26x26  texture=sactx-0-256x256-BC7-DLC2_ItemSprites-0cee4c3a 256x256  packed  texRect=(180,160 26x26)  border=(0,0,0,0)  显示=26x26  active=True
+  Canvas/MainWindow/GuestBuffMarkModule/BuffMarkUIParent(Clone)7/StaticBuffArea/SatoriEyeDisplayer(Clone)
+      sprite=时焉侑_审判之眼_0  rect=81x54  texture=sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  packed  texRect=(0,0 81x54)  border=(0,0,0,0)  显示=81x54  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentSC/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentPSG/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)/NameField
+      sprite=Button_Album_Guest_95x126_3  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(430,114 88x30)  border=(0,0,0,0)  显示=95x126  active=True
+  NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)/AvatarMask
+      sprite=Button_Album_Guest_95x126_2  rect=95x126  texture=sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  packed  texRect=(96,62 88x88)  border=(0,0,0,0)  显示=95x126  active=True
+  FloatingMenu/NotePannel/NoteBook_AlbumPannel(Clone)/AlbumPannels/NoteBook_AlbumGuestSubPannel(Clone)/SubPannel/NoteBook_AlbumGuestSubSubPannel(Clone)/ContentMask/GuestContentP/GuestElementCompact(Clone)
+      sprite=Button_Album_Guest_95x126_1  rect=95x126  texture=sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  packed  texRect=(1155,1575 93x122)  border=(0,0,0,0)  显示=95x126  active=True
+  …… 另有 325 条同类命中未列出
+
+## 三、九宫格皮肤候选（border 非零 → 可直接 9-slice 画面板底/按钮）
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/Sign
+      sprite=GeneralTag_Marker_Slash  rect=22x4  texture=GeneralTag_Marker 43x21  texRect=(0,17 22x4)  border=(3,0,3,0)  显示=190x4  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/Sign
+      sprite=GeneralTag_Marker_Slash  rect=22x4  texture=GeneralTag_Marker 43x21  texRect=(0,17 22x4)  border=(3,0,3,0)  显示=190x4  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/Sign
+      sprite=GeneralTag_Marker_Slash  rect=22x4  texture=GeneralTag_Marker 43x21  texRect=(0,17 22x4)  border=(3,0,3,0)  显示=190x4  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/Sign
+      sprite=GeneralTag_Marker_Slash  rect=22x4  texture=GeneralTag_Marker 43x21  texRect=(0,17 22x4)  border=(3,0,3,0)  显示=190x4  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/Sign
+      sprite=GeneralTag_Marker_Slash  rect=22x4  texture=GeneralTag_Marker 43x21  texRect=(0,17 22x4)  border=(3,0,3,0)  显示=190x4  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/IngTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/IngTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/IngTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/IngTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/IngTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/IngTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/IngTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/IngTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/IngTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneStoragePannel(Clone)/Module/DetailParent/SellableDescriberWindow_CompactHorizontal/Tags/IngTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/Sign
+      sprite=GeneralTag_Marker_Slash  rect=22x4  texture=GeneralTag_Marker 43x21  texRect=(0,17 22x4)  border=(3,0,3,0)  显示=190x4  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/Sign
+      sprite=GeneralTag_Marker_Slash  rect=22x4  texture=GeneralTag_Marker 43x21  texRect=(0,17 22x4)  border=(3,0,3,0)  显示=190x4  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/Sign
+      sprite=GeneralTag_Marker_Slash  rect=22x4  texture=GeneralTag_Marker 43x21  texRect=(0,17 22x4)  border=(3,0,3,0)  显示=190x4  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/Sign
+      sprite=GeneralTag_Marker_Slash  rect=22x4  texture=GeneralTag_Marker 43x21  texRect=(0,17 22x4)  border=(3,0,3,0)  显示=190x4  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/Sign
+      sprite=GeneralTag_Marker_Slash  rect=22x4  texture=GeneralTag_Marker 43x21  texRect=(0,17 22x4)  border=(3,0,3,0)  显示=190x4  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/RemovedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/AddTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BannedTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=0x0  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/BevTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)/BG
+      sprite=GeneralTag_Inner  rect=30x23  texture=GeneralTag_Inner 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  Canvas/MainWindow/UIPannelRoot/WorkSceneBinPannel(Clone)/SellableDescriberWindow_CompactHorizontal/Tags/FoodTag(Clone)
+      sprite=GeneralTag_Outer  rect=30x23  texture=GeneralTag_Outer 30x23  texRect=(0,0 30x23)  border=(3,2,3,2)  显示=200x25  active=False
+  …… 另有 1408 条同类命中未列出
+
+## 四、图集分组（同一张 texture 被几个 Image 引用 / 里面有哪些 sprite）
+  Accum06_400x 2048x1280  引用=1  sprite种类=1
+      Accum06_400x_0 x1
+  Album_CharBG 240x336  引用=2  sprite种类=1
+      Album_CharBG x2
+  Button_003_80x32_Bleached 80x96  引用=5  sprite种类=1
+      Button_003_80x32_0 x5
+  Button_DailyMenu_Disabled 163x68  引用=2  sprite种类=1
+      Button_DailyMenu_Disabled x2
+  Button_Menu_Muted 64x64  引用=2  sprite种类=2
+      Button_Menu_Muted_0 x1
+      Button_Menu_Muted_1 x1
+  Cursor 38x38  引用=1  sprite种类=1
+      Cursor x1
+  ESC_LogBG_01_Center 241x235  引用=1  sprite种类=1
+      ESC_LogBG_01_Center x1
+  Fallback_0 26x26  引用=1  sprite种类=1
+      Fallback_0 x1
+  FilterButton 203x118  引用=10  sprite种类=1
+      FilterButton_Idle x10
+  FireBall_0 192x48  引用=2  sprite种类=1
+      FireBall_0_0 x2
+  GeneralTag_Inner 30x23  引用=272  sprite种类=1
+      GeneralTag_Inner x272
+  GeneralTag_Marker 43x21  引用=272  sprite种类=4
+      GeneralTag_Marker_Add x34
+      GeneralTag_Marker_Cross x51
+      GeneralTag_Marker_Dot x153
+      GeneralTag_Marker_Slash x34
+  GeneralTag_Outer 30x23  引用=272  sprite种类=1
+      GeneralTag_Outer x272
+  GuideMap_WayPoint 400x135  引用=3  sprite种类=2
+      GuideMap_WayPoint_11 x1
+      GuideMap_WayPoint_6 x2
+  IncomeBG 162x39  引用=2  sprite种类=1
+      IncomeBG x2
+  InputFieldBackground 32x32  引用=1  sprite种类=1
+      InputFieldBackground x1
+  ItemLock 64x64  引用=11  sprite种类=1
+      ItemLock x11
+  Keyboard_InputKeys 320x291  引用=293  sprite种类=18
+      Keyboard_InputKeys_0 x31
+      Keyboard_InputKeys_10 x29
+      Keyboard_InputKeys_12 x1
+      Keyboard_InputKeys_16 x13
+      Keyboard_InputKeys_17 x3
+      Keyboard_InputKeys_18 x32
+      Keyboard_InputKeys_22 x33
+      Keyboard_InputKeys_23 x14
+      …… 另 9 种
+  Kourindou_res1 288x192  引用=2  sprite种类=1
+      Kourindou_res1_2 x2
+  MystiaIdol 256x359  引用=1  sprite种类=1
+      MystiaIdol x1
+  NewsBG_01_v2 266x136  引用=1  sprite种类=1
+      NewsBG_01_v2 x1
+  NewsBG_02_v2 173x202  引用=1  sprite种类=1
+      NewsBG_02_v2 x1
+  NewsBG_03_v2 218x233  引用=1  sprite种类=1
+      NewsBG_03_v2 x1
+  NewsBG_04_v2 182x204  引用=1  sprite种类=1
+      NewsBG_04_v2 x1
+  NoteBook_BG_Album_Item_Detail_Bordered 440x414  引用=2  sprite种类=1
+      NoteBook_BG_Album_Item_Detail_Bordered x2
+  NoteBook_Tab_Album_Character 224x96  引用=8  sprite种类=4
+      NoteBook_Tab_Album_Character_0 x2
+      NoteBook_Tab_Album_Character_1 x2
+      NoteBook_Tab_Album_Character_2 x2
+      NoteBook_Tab_Album_Character_3 x2
+  OrderReceipt_SelectionOutline 32x66  引用=1  sprite种类=1
+      OrderReceipt_SelectionOutline x1
+  PS_InputKeys 204x146  引用=8  sprite种类=6
+      PS_InputKeys_0 x1
+      PS_InputKeys_10 x2
+      PS_InputKeys_2 x1
+      PS_InputKeys_4 x1
+      PS_InputKeys_7 x1
+      PS_InputKeys_8 x2
+  Scroll 80x768  引用=2  sprite种类=2
+      Scroll_6 x1
+      Scroll_7 x1
+  Small Dot 16x16  引用=49  sprite种类=1
+      Small Dot x49
+  Switch 32x32  引用=1  sprite种类=1
+      Switch x1
+  SwitchNative_InputKeys 204x146  引用=1  sprite种类=1
+      Switch_InputKeys_1 x1
+  Switch_InputKeys 204x146  引用=1  sprite种类=1
+      Switch_InputKeys_8 x1
+  Table_Serve_New 240x192  引用=8  sprite种类=2
+      Table_Serve_New_0 x4
+      Table_Serve_New_1 x4
+  Tags_Light 93x32  引用=8  sprite种类=1
+      Tags_Light x8
+  TipNotify 95x68  引用=14  sprite种类=3
+      Exp x2
+      OrderCost x2
+      Tips x10
+  UIMask 32x32  引用=2  sprite种类=1
+      UIMask x2
+  XBOX_InputKeys 204x146  引用=2  sprite种类=2
+      XBOX_InputKeys_12 x1
+      XBOX_InputKeys_14 x1
+  add 24x24  引用=308  sprite种类=1
+      add x308
+  guide2_1 1280x720  引用=1  sprite种类=1
+      guide2_1 x1
+  guide2_10 1280x720  引用=1  sprite种类=1
+      guide2_10 x1
+  guide2_11 1280x720  引用=1  sprite种类=1
+      guide2_11 x1
+  guide2_2 1280x720  引用=1  sprite种类=1
+      guide2_2 x1
+  guide2_4 1280x720  引用=1  sprite种类=1
+      guide2_4 x1
+  guide2_5 1280x720  引用=2  sprite种类=1
+      guide2_5 x2
+  guide2_6 1280x720  引用=1  sprite种类=1
+      guide2_6 x1
+  guide2_7 1280x720  引用=1  sprite种类=1
+      guide2_7 x1
+  guide2_8 1280x720  引用=1  sprite种类=1
+      guide2_8 x1
+  guide2_9 1280x720  引用=1  sprite种类=1
+      guide2_9 x1
+  guide_1 1280x720  引用=1  sprite种类=1
+      guide_1 x1
+  guide_10 1280x720  引用=1  sprite种类=1
+      guide_10 x1
+  guide_2 1280x720  引用=1  sprite种类=1
+      guide_2 x1
+  guide_3_stick 1280x720  引用=1  sprite种类=1
+      guide_3_stick x1
+  guide_4 1280x720  引用=1  sprite种类=1
+      guide_4 x1
+  guide_5 1280x720  引用=1  sprite种类=1
+      guide_5 x1
+  guide_6 1280x720  引用=1  sprite种类=1
+      guide_6 x1
+  guide_7 1280x720  引用=1  sprite种类=1
+      guide_7 x1
+  guide_8 1280x720  引用=2  sprite种类=1
+      guide_8 x2
+  guide_9 1280x720  引用=1  sprite种类=1
+      guide_9 x1
+  name 128x48  引用=4  sprite种类=1
+      name_0 x4
+  recycler2 224x288  引用=1  sprite种类=1
+      recycler2 x1
+  roundedBG 23x23  引用=2  sprite种类=1
+      roundedBG x2
+  sactx-0-1024x1024-BC7-Common_Storage_Atlas-adbcae0f 1024x1024  引用=17  sprite种类=2
+      0_StoreShelf x15
+      Storage_Scroll x2
+  sactx-0-1024x1024-BC7-DLC1_SpecialAndDaySceneNPC-93e7c711 1024x1024  引用=4  sprite种类=4
+      梦子Eyes_0, 1 x1
+      梦子Main_0, 1 x1
+      键山雏Eyes_0, 1 x1
+      键山雏Main_0, 1 x1
+  sactx-0-1024x1024-BC7-DaySceneIzakayaSelectionPannel_Atlas-ce3d2777 1024x1024  引用=70  sprite种类=22
+      IzakayaSpotExtensions_0 x3
+      IzakayaSpotExtensions_1 x3
+      IzakayaSpotExtensions_2 x3
+      IzakayaSpotExtensions_3 x1
+      IzakayaSpotExtensions_4 x1
+      LevelSelect_0 x3
+      LevelSelect_1 x3
+      Lockedhighlight x1
+      …… 另 13 种
+  sactx-0-1024x1024-BC7-Storage_MainPannel_Atlas-ae8ee18d 1024x1024  引用=40  sprite种类=5
+      Scroll_4 x8
+      Scroll_5 x8
+      Storage_1_0 x2
+      Storage_1_1 x2
+      Storage_Tab x20
+  sactx-0-1024x1024-Crunch-DLC4_Basement_Furniture_Atlas-40667f05 1024x1024  引用=94  sprite种类=46
+      DLC4_Basement_Furniture_0 x2
+      DLC4_Basement_Furniture_1 x2
+      DLC4_Basement_Furniture_10 x2
+      DLC4_Basement_Furniture_11 x2
+      DLC4_Basement_Furniture_12 x2
+      DLC4_Basement_Furniture_13 x2
+      DLC4_Basement_Furniture_14 x2
+      DLC4_Basement_Furniture_15 x2
+      …… 另 37 种
+  sactx-0-1024x1024-Crunch-DLC4_PanelRes_Atlas-a00e3852 1024x1024  引用=4  sprite种类=4
+      DLC4_PanelRes_6 x1
+      DLC4_PanelRes_7 x1
+      DLC4_PanelRes_8 x1
+      DLC4_PanelRes_9 x1
+  sactx-0-1024x2048-BC7-Common_Esc_Atlas-b143b031 1024x2048  引用=156  sprite种类=11
+      ESC_BG x2
+      ESC_Config_Button_0 x45
+      ESC_Config_Button_2 x45
+      ESC_Front x2
+      ESC_LogBG_01 x7
+      ESC_LogBG_01_Selected x7
+      ESC_LogBG_02 x21
+      ESC_LogBG_02_Selected x14
+      …… 另 2 种
+  sactx-0-1024x256-Uncompressed-Common_Controls_Atlas-fcbacead 1024x256  引用=1083  sprite种类=34
+      Asset_002 x58
+      Asset_003 x6
+      Bar_ItemSlot x71
+      Bar_Scroll_20x96_0 x12
+      Bar_Scroll_20x96_1 x12
+      Button_005_24x16_1 x5
+      Button_005_96x48_0 x58
+      Button_005_96x48_3 x1
+      …… 另 25 种
+  sactx-0-1024x512-BC7-Common_DialogBox_Atlas-eeb12ad1 1024x512  引用=8  sprite种类=2
+      DialogElementsBG_2 x4
+      DialogElements_Box x4
+  sactx-0-1024x512-BC7-Common_UIElement_Atlas-63250395 1024x512  引用=17  sprite种类=7
+      BeveragePlate_0 x2
+      Beverage_Available x2
+      FoodPlate_0 x2
+      MenuLock x2
+      NoteBook_Guest_Pixel x4
+      Recipe_Available_0 x2
+      deskIdle x3
+  sactx-0-1024x512-BC7-Spell_Keine_Atlas-c30ca14d 1024x512  引用=1  sprite种类=1
+      慧音-奖励 x1
+  sactx-0-128x128-BC7-Common_IngredientTag_Atlas-4f63b127 128x128  引用=280  sprite种类=4
+      Asset_004_32x32_0 x1
+      Asset_004_32x32_1 x1
+      Asset_004_32x32_3 x10
+      Pinned x268
+  sactx-0-128x128-BC7-Common_NpcGuideIcons_Atlas-d8d3cf4e 128x128  引用=1  sprite种类=1
+      Event x1
+  sactx-0-128x64-BC7-Spell_Yuu_Atlas-ca44dbe5 128x64  引用=12  sprite种类=3
+      时焉侑_审判之眼_0 x5
+      时焉侑_审判之眼_1 x2
+      时焉侑_审判之眼_2 x5
+  sactx-0-2048x1024-BC7-Common_PanelBG_Atlas-40b14e6e 2048x1024  引用=23  sprite种类=5
+      CharacterBG x3
+      ItemBG x1
+      PanelBG_01 x13
+      PannelBG_2 x5
+      pannelBG_02 x1
+  sactx-0-2048x1024-BC7-DialogPannel_Atlas-e4cc496d 2048x1024  引用=12  sprite种类=6
+      DialogElementsBG_0 x2
+      DialogElementsBG_1 x2
+      DialogElements_5 x2
+      DialogElements_Left x2
+      DialogElements_Next x2
+      DialogElements_Right x2
+  sactx-0-2048x1024-BC7-IzakayaConfigPannel_Atlas-0ab33191 2048x1024  引用=6  sprite种类=5
+      Button_Menu_0 x2
+      Button_Menu_1 x1
+      deskSelected x1
+      gotoWork x1
+      preparation_v2 x1
+  sactx-0-2048x1024-BC7-Work_Atlas-6078d498 2048x1024  引用=52  sprite种类=19
+      Night_Combo_162x104_0 x1
+      Night_Combo_162x104_1 x1
+      Night_Combo_162x104_2 x1
+      Night_Combo_Number_0 x2
+      Night_Combo_Number_10 x1
+      Night_Combo_Number_2 x1
+      Night_Frame x1
+      Night_FrontDesk x1
+      …… 另 10 种
+  sactx-0-2048x1024-Crunch-CommonLights_Atlas-5237079c 2048x1024  引用=105  sprite种类=3
+      GaussianWhite x1
+      PixelateWhite x99
+      lamp x5
+  sactx-0-2048x2048-BC7-Common_GuideMap_Atlas-b86cbda9 2048x2048  引用=90  sprite种类=15
+      GuideMap_map x3
+      Lines 0_0 x3
+      Lines 0_1 x3
+      Lines 0_10 x3
+      Lines 0_11 x3
+      Lines 0_12 x3
+      Lines 0_13 x48
+      Lines 0_2 x3
+      …… 另 6 种
+  sactx-0-2048x2048-BC7-Core_SpecialAndDaySceneNPC-f44c7e7e 2048x2048  引用=6  sprite种类=6
+      咲夜Eyes_0, 1 x1
+      咲夜Main_0, 1 x1
+      响子-工作服Eyes_0, 1 x1
+      响子-工作服Main_0, 1 x1
+      慧音Eyes_0, 1 x1
+      慧音Main_0, 1 x1
+  sactx-0-2048x2048-BC7-NoteBook_MainPannel_Atlas-cbc6b732 2048x2048  引用=290  sprite种类=51
+      Arrow x1
+      Asset_001 x12
+      Asset_007 x3
+      Asset_008 x1
+      Bar_Bond_20x16_0 x16
+      Bar_Bond_20x16_1 x16
+      Bar_exp x1
+      Button_Album_GuestTab x10
+      …… 另 42 种
+  sactx-0-2048x2048-BC7-WorkSceneSustainedPannel_Atlas-87d2e595 2048x2048  引用=79  sprite种类=20
+      0_BeverageShelf x2
+      0_StoreCatalog x2
+      0_cook x2
+      Asset_009 x4
+      BG_Trash_0 x2
+      BG_Trash_1 x2
+      Button_DailyMenu x2
+      CharBG x13
+      …… 另 11 种
+  sactx-0-2048x256-BC7-Common_QTE_Atlas-1832caf9 2048x256  引用=534  sprite种类=20
+      QTEv2_0 x5
+      QTEv2_1 x5
+      QTEv2_2 x5
+      QTEv2_3 x64
+      QTEv2_4 x22
+      QTEv3_1 x22
+      QTEv3_10 x22
+      QTEv3_11 x22
+      …… 另 11 种
+  sactx-0-2048x256-BC7-LoadingIndicatorPanel_Atlas-36a55f5c 2048x256  引用=2  sprite种类=2
+      LoadRing_1 x1
+      LoadRing_9 x1
+  sactx-0-256x128-BC7-DaySceneSustainedPannel_Atlas-33282f4d 256x128  引用=1  sprite种类=1
+      Icon_Map_0 x1
+  sactx-0-256x256-BC7-Common_Frame_Atlas-54727727 256x256  引用=176  sprite种类=4
+      CharacterFrame x1
+      Frame x128
+      StampFrame x11
+      StampFrame_White x36
+  sactx-0-256x256-BC7-DLC1_ItemSprites-69b6440b 256x256  引用=2  sprite种类=1
+      DLC1_Foods_1017(Clone) x2
+  sactx-0-256x256-BC7-DLC2_BuffSprites-3cadaf99 256x256  引用=7  sprite种类=2
+      Parsee_Shield(Clone) x3
+      Satori_Eye(Clone) x4
+  sactx-0-256x256-BC7-DLC2_ItemSprites-0cee4c3a 256x256  引用=4  sprite种类=1
+      DLC2_Items_2003 x4
+  sactx-0-256x256-BC7-DLC3_Spell_Futo_Atlas-f7c26ee0 256x256  引用=3  sprite种类=2
+      Explotion_Crash_0_0 x2
+      托盘烧焦 x1
+  sactx-0-256x256-BC7-DLC5_Spell_Toyohime_Atlas-5d312abd 256x256  引用=3  sprite种类=1
+      墨镜 x3
+  sactx-0-256x256-BC7-EscMenu_MainPannel_Atlas-9734c515 256x256  引用=30  sprite种类=9
+      Esc_Save_On x2
+      Esc_Settings_Off x2
+      Esc_Settings_On x2
+      InputHelper_Icons_10 x4
+      InputHelper_Icons_20 x4
+      InputHelper_Icons_21 x4
+      InputHelper_Icons_31 x4
+      InputHelper_Icons_32 x4
+      …… 另 0 种
+  sactx-0-256x256-BC7-Spell_Akyuu_Atlas-516fec13 256x256  引用=1  sprite种类=1
+      阿求-惩罚1 x1
+  sactx-0-256x256-BC7-Spell_Marisa_Atlas-ec9f0c46 256x256  引用=1  sprite种类=1
+      Marisa-Pic x1
+  sactx-0-256x32-BC7-Spell_Tewi_Atlas_Shared-2cf9ddda 256x32  引用=71  sprite种类=2
+      Lines_0 x6
+      Shop_PriceTag x65
+  sactx-0-256x512-BC7-Day_Atlas-56596f28 256x512  引用=9  sprite种类=9
+      0_Clock_Sprite_0 x1
+      0_Clock_Sprite_1 x1
+      0_Clock_Sprite_10 x1
+      0_Clock_Sprite_2 x1
+      HeartsDown_32x_0 x1
+      HeartsUp_32x_1 x1
+      HeartsUp_32x_4 x1
+      Izakaya_Name x1
+      …… 另 0 种
+  sactx-0-32x32-BC7-Spell_Rin_Atlas-28c5bd24 32x32  引用=3  sprite种类=1
+      冴月麟-续单印记 x3
+  sactx-0-512x1024-BC7-Common_GuideMap_Panel_Atlas-8dfa34d8 512x1024  引用=8  sprite种类=2
+      BGPaper x3
+      MapTitle x5
+  sactx-0-512x1024-BC7-Common_NoteBook_Atlas-f4d4323a 512x1024  引用=30  sprite种类=4
+      NoteBook_BG_Album_Guest_TextBG x5
+      NoteBook_BG_Album_Item_Detail x17
+      NoteBook_Tab_Profile x4
+      NoteBook_Tab_Profile_Idle x4
+  sactx-0-512x1024-BC7-DLC4_Spell_Remilia_Atlas-ac8d8990 512x1024  引用=2  sprite种类=2
+      S_Gungnir x1
+      S_GungnirLight2 x1
+  sactx-0-512x1024-BC7-Spell_Tewi_Atlas-c41aba5a 512x1024  引用=2  sprite种类=2
+      Night_TewiSales x1
+      Night_TewiSales_TotalPannel x1
+  sactx-0-512x32-BC7-Common_Result_Atlas-dcbe0c5f 512x32  引用=71  sprite种类=2
+      Lines_1 x23
+      Lines_2 x48
+  sactx-0-512x512-BC7-Common_Shop_Atlas-dbaef8ac 512x512  引用=27  sprite种类=3
+      Asset_006 x2
+      Line x4
+      cook_Detail x21
+  sactx-0-512x512-BC7-Core_BuffSprites-b283ec6b 512x512  引用=19  sprite种类=9
+      BestEvalPercentage(Clone) x3
+      ExtraFeeForever(Clone) x3
+      ExtraMood(Clone) x3
+      Fever x1
+      FreeCookPercentage(Clone) x3
+      InstantEvaluation x1
+      PatientFreeze x1
+      ThrowDeliver x1
+      …… 另 0 种
+  sactx-0-512x512-BC7-Core_ItemSprites-f7e71b15 512x512  引用=21  sprite种类=7
+      Beverages_4(Clone) x1
+      Cookers_1 x1
+      Foods_0 x5
+      Foods_24 x5
+      Foods_7 x3
+      Ingredients_17 x5
+      Ingredients_21 x1
+  sactx-0-512x512-BC7-DLC2_Spell_Parsee_Atlas-83940e8b 512x512  引用=7  sprite种类=6
+      bg x2
+      eyeBase x1
+      eyeFire x1
+      eyeFire2 x1
+      资本家米斯琪 x1
+      钉子 x1
+  sactx-0-512x512-DXT5|BC3-colliders_50x_Atlas-1a886289 512x512  引用=2  sprite种类=1
+      colliders_50x_23 x2
+  sactx-0-64x64-BC7-Common_NpcConvIcons_Atlas-6993988b 64x64  引用=19  sprite种类=3
+      UI_night_addup_23 x1
+      UI_night_addup_24 x9
+      UI_night_addup_25 x9
+  sactx-0-64x64-BC7-DayScene_FastTravelPannel_Atlas-a59f460a 64x64  引用=2  sprite种类=2
+      PlayerIcon_Head x1
+      arrow x1
+  sactx-1-1024x1024-BC7-SpecialGuest_Portrayal_Primary_Atlas-ee9fc758 1024x1024  引用=1  sprite种类=1
+      帝 奸商 x1
+  sactx-1-2048x2048-BC7-DLC4_Spell_Aya_Atlas-06be140b 2048x2048  引用=1  sprite种类=1
+      报纸卷 x1
+  sactx-2-4096x4096-Crunch-SpellDeclareFx_Atlas-2a790b81 4096x4096  引用=4  sprite种类=1
+      SpellDeclareFx_Frames_001 x4
+  红雾异变再临 108x56  引用=1  sprite种类=1
+      红雾异变再临 x1
+
+## 五、全部 Sprite 名（排序，xN = 被几个 Image 引用）
+  0_BeverageShelf  x2
+  0_Clock_Sprite_0  x1
+  0_Clock_Sprite_1  x1
+  0_Clock_Sprite_10  x1
+  0_Clock_Sprite_2  x1
+  0_StoreCatalog  x2
+  0_StoreShelf  x15
+  0_cook  x2
+  Accum06_400x_0  x1
+  Album_CharBG  x2
+  Arrow  x1
+  Asset_001  x12
+  Asset_002  x58
+  Asset_003  x6
+  Asset_004_32x32_0  x1
+  Asset_004_32x32_1  x1
+  Asset_004_32x32_3  x10
+  Asset_006  x2
+  Asset_007  x3
+  Asset_008  x1
+  Asset_009  x4
+  BGPaper  x3
+  BG_Trash_0  x2
+  BG_Trash_1  x2
+  Bar_Bond_20x16_0  x16
+  Bar_Bond_20x16_1  x16
+  Bar_ItemSlot  x71
+  Bar_Scroll_20x96_0  x12
+  Bar_Scroll_20x96_1  x12
+  Bar_exp  x1
+  BestEvalPercentage(Clone)  x3
+  BeveragePlate_0  x2
+  Beverage_Available  x2
+  Beverages_4(Clone)  x1
+  Button_003_80x32_0  x5
+  Button_005_24x16_1  x5
+  Button_005_96x48_0  x58
+  Button_005_96x48_3  x1
+  Button_Album_GuestTab  x10
+  Button_Album_Guest_95x126_0  x36
+  Button_Album_Guest_95x126_1  x81
+  Button_Album_Guest_95x126_2  x85
+  Button_Album_Guest_95x126_3  x85
+  Button_DailyMenu  x2
+  Button_DailyMenu_Disabled  x2
+  Button_ItemBG  x304
+  Button_List_0  x3
+  Button_List_1  x8
+  Button_List_2  x2
+  Button_List_3  x8
+  Button_Menu_0  x2
+  Button_Menu_1  x1
+  Button_Menu_Muted_0  x1
+  Button_Menu_Muted_1  x1
+  Button_Switch_1  x18
+  Button_Switch_2  x6
+  Button_pause  x2
+  CharBG  x13
+  CharFrame  x9
+  CharacterBG  x3
+  CharacterFrame  x1
+  Check  x52
+  Cookers_1  x1
+  Cursor  x1
+  DLC1_Foods_1017(Clone)  x2
+  DLC2_Items_2003  x4
+  DLC4_Basement_Furniture_0  x2
+  DLC4_Basement_Furniture_1  x2
+  DLC4_Basement_Furniture_10  x2
+  DLC4_Basement_Furniture_11  x2
+  DLC4_Basement_Furniture_12  x2
+  DLC4_Basement_Furniture_13  x2
+  DLC4_Basement_Furniture_14  x2
+  DLC4_Basement_Furniture_15  x2
+  DLC4_Basement_Furniture_16  x2
+  DLC4_Basement_Furniture_17  x2
+  DLC4_Basement_Furniture_18  x2
+  DLC4_Basement_Furniture_19  x2
+  DLC4_Basement_Furniture_2  x2
+  DLC4_Basement_Furniture_20  x2
+  DLC4_Basement_Furniture_21  x2
+  DLC4_Basement_Furniture_22  x2
+  DLC4_Basement_Furniture_23  x2
+  DLC4_Basement_Furniture_24  x2
+  DLC4_Basement_Furniture_25  x2
+  DLC4_Basement_Furniture_26  x2
+  DLC4_Basement_Furniture_27  x2
+  DLC4_Basement_Furniture_28  x2
+  DLC4_Basement_Furniture_29  x2
+  DLC4_Basement_Furniture_3  x4
+  DLC4_Basement_Furniture_30  x2
+  DLC4_Basement_Furniture_31  x2
+  DLC4_Basement_Furniture_32  x2
+  DLC4_Basement_Furniture_33  x2
+  DLC4_Basement_Furniture_34  x2
+  DLC4_Basement_Furniture_35  x2
+  DLC4_Basement_Furniture_36  x2
+  DLC4_Basement_Furniture_37  x2
+  DLC4_Basement_Furniture_38  x2
+  DLC4_Basement_Furniture_39  x2
+  DLC4_Basement_Furniture_4  x2
+  DLC4_Basement_Furniture_40  x2
+  DLC4_Basement_Furniture_41  x2
+  DLC4_Basement_Furniture_42  x2
+  DLC4_Basement_Furniture_43  x2
+  DLC4_Basement_Furniture_44  x2
+  DLC4_Basement_Furniture_45  x2
+  DLC4_Basement_Furniture_5  x2
+  DLC4_Basement_Furniture_6  x2
+  DLC4_Basement_Furniture_7  x2
+  DLC4_Basement_Furniture_8  x2
+  DLC4_Basement_Furniture_9  x2
+  DLC4_PanelRes_6  x1
+  DLC4_PanelRes_7  x1
+  DLC4_PanelRes_8  x1
+  DLC4_PanelRes_9  x1
+  DailyMenu_Board  x1
+  DialogElementsBG_0  x2
+  DialogElementsBG_1  x2
+  DialogElementsBG_2  x4
+  DialogElements_5  x2
+  DialogElements_Box  x4
+  DialogElements_Left  x2
+  DialogElements_Next  x2
+  DialogElements_Right  x2
+  Dot_Large_A  x58
+  Dot_Large_B  x32
+  Dot_Small_A  x18
+  Dot_Small_B  x4
+  ESC_BG  x2
+  ESC_Config_Button_0  x45
+  ESC_Config_Button_2  x45
+  ESC_Front  x2
+  ESC_LogBG_01  x7
+  ESC_LogBG_01_Center  x1
+  ESC_LogBG_01_Selected  x7
+  ESC_LogBG_02  x21
+  ESC_LogBG_02_Selected  x14
+  ESC_QuitButtons_1  x9
+  Esc_Save_Off  x2
+  Esc_Save_On  x2
+  Esc_Settings_Off  x2
+  Esc_Settings_On  x2
+  Esc_Toggle_0  x12
+  Esc_Toggle_1  x12
+  Event  x1
+  Exp  x2
+  Exp_Bar  x1
+  ExpelWard_64x48_1  x2
+  ExpelWard_64x48_Highlight_1  x2
+  Explotion_Crash_0_0  x2
+  ExtraFeeForever(Clone)  x3
+  ExtraMood(Clone)  x3
+  Fallback_0  x1
+  FastForwardButton_Base  x3
+  FastForwardButton_Indicator  x3
+  Fever  x1
+  FilterButton_Idle  x10
+  FireBall_0_0  x2
+  FoodPlate_0  x2
+  Foods_0  x5
+  Foods_24  x5
+  Foods_7  x3
+  Frame  x128
+  Frame_Circle  x1
+  FreeCookPercentage(Clone)  x3
+  GaussianWhite  x1
+  GeneralTag_Inner  x272
+  GeneralTag_Marker_Add  x34
+  GeneralTag_Marker_Cross  x51
+  GeneralTag_Marker_Dot  x153
+  GeneralTag_Marker_Slash  x34
+  GeneralTag_Outer  x272
+  GuideMap_WayPoint_11  x1
+  GuideMap_WayPoint_6  x2
+  GuideMap_map  x3
+  HeartsDown_32x_0  x1
+  HeartsUp_32x_1  x1
+  HeartsUp_32x_4  x1
+  Icon_Map_0  x1
+  IncomeBG  x2
+  Ingredients_17  x5
+  Ingredients_21  x1
+  InputFieldBackground  x1
+  InputHelper_Icons_10  x4
+  InputHelper_Icons_20  x4
+  InputHelper_Icons_21  x4
+  InputHelper_Icons_31  x4
+  InputHelper_Icons_32  x4
+  InputHelper_Icons_9  x4
+  InstantEvaluation  x1
+  ItemBG  x1
+  ItemLock  x11
+  IzakayaSpotExtensions_0  x3
+  IzakayaSpotExtensions_1  x3
+  IzakayaSpotExtensions_2  x3
+  IzakayaSpotExtensions_3  x1
+  IzakayaSpotExtensions_4  x1
+  Izakaya_Name  x1
+  Izakaya_Theme  x1
+  Keyboard_InputKeys_0  x31
+  Keyboard_InputKeys_10  x29
+  Keyboard_InputKeys_12  x1
+  Keyboard_InputKeys_16  x13
+  Keyboard_InputKeys_17  x3
+  Keyboard_InputKeys_18  x32
+  Keyboard_InputKeys_22  x33
+  Keyboard_InputKeys_23  x14
+  Keyboard_InputKeys_25  x12
+  Keyboard_InputKeys_26  x5
+  Keyboard_InputKeys_27  x4
+  Keyboard_InputKeys_28  x5
+  Keyboard_InputKeys_3  x33
+  Keyboard_InputKeys_30  x7
+  Keyboard_InputKeys_31  x19
+  Keyboard_InputKeys_4  x16
+  Keyboard_InputKeys_5  x6
+  Keyboard_InputKeys_9  x30
+  Kourindou_res1_2  x2
+  LevelSelect_0  x3
+  LevelSelect_1  x3
+  Line  x4
+  Lines 0_0  x3
+  Lines 0_1  x3
+  Lines 0_10  x3
+  Lines 0_11  x3
+  Lines 0_12  x3
+  Lines 0_13  x48
+  Lines 0_2  x3
+  Lines 0_3  x3
+  Lines 0_4  x3
+  Lines 0_5  x3
+  Lines 0_6  x3
+  Lines 0_7  x3
+  Lines 0_8  x3
+  Lines 0_9  x3
+  Lines_0  x6
+  Lines_1  x23
+  Lines_2  x48
+  LoadRing_1  x1
+  LoadRing_9  x1
+  Lockedhighlight  x1
+  MapTitle  x5
+  Marisa-Pic  x1
+  Mask_CharaImg  x2
+  MenuLock  x2
+  Mission_Condition  x3
+  Mission_Description  x2
+  MystiaIdol  x1
+  NewsBG_01  x2
+  NewsBG_01_v2  x1
+  NewsBG_02  x2
+  NewsBG_02_v2  x1
+  NewsBG_03  x2
+  NewsBG_03_v2  x1
+  NewsBG_04  x2
+  NewsBG_04_v2  x1
+  Night_Combo_162x104_0  x1
+  Night_Combo_162x104_1  x1
+  Night_Combo_162x104_2  x1
+  Night_Combo_Number_0  x2
+  Night_Combo_Number_10  x1
+  Night_Combo_Number_2  x1
+  Night_Frame  x1
+  Night_FrontDesk  x1
+  Night_FrontDesk_Tray  x5
+  Night_FrontDesk_Tray_Selected  x5
+  Night_Partner_UI_0  x1
+  Night_Partner_UI_1  x2
+  Night_Partner_UI_16  x7
+  Night_Partner_UI_2  x6
+  Night_Partner_UI_27  x4
+  Night_Partner_UI_28  x4
+  Night_Partner_UI_29  x4
+  Night_Partner_UI_3  x6
+  Night_Partner_UI_30  x4
+  Night_Partner_UI_4  x5
+  Night_Partner_UI_5  x6
+  Night_Partner_UI_7  x1
+  Night_TewiSales  x1
+  Night_TewiSales_TotalPannel  x1
+  Night_Time_BG  x1
+  Night_Time_Bar  x1
+  NoteBook  x4
+  NoteBook_Album_SC_bg_Alt_0  x2
+  NoteBook_Album_SC_bg_Alt_1  x2
+  NoteBook_Album_SC_bg_Alt_2  x2
+  NoteBook_Album_SC_bg_Alt_3  x2
+  NoteBook_BG  x2
+  NoteBook_BG_Album_Guest_Main  x3
+  NoteBook_BG_Album_Guest_Tabs_0  x10
+  NoteBook_BG_Album_Guest_TextBG  x5
+  NoteBook_BG_Album_Item_Detail  x17
+  NoteBook_BG_Album_Item_Detail_Bordered  x2
+  NoteBook_BG_Album_Item_Main  x2
+  NoteBook_BG_Album_Item_Tab_Idle_0  x21
+  NoteBook_BG_Album_Item_Tab_Idle_2  x21
+  NoteBook_BG_Mission  x2
+  NoteBook_BG_Recipe_0  x2
+  NoteBook_BG_Recipe_1  x2
+  NoteBook_Context_BG  x6
+  NoteBook_Guest_Pixel  x4
+  NoteBook_Profile_add_0  x2
+  NoteBook_Profile_add_1  x1
+  NoteBook_Profile_add_2  x1
+  NoteBook_Profile_add_3  x1
+  NoteBook_Tab_Album  x2
+  NoteBook_Tab_Album_Character_0  x2
+  NoteBook_Tab_Album_Character_1  x2
+  NoteBook_Tab_Album_Character_2  x2
+  NoteBook_Tab_Album_Character_3  x2
+  NoteBook_Tab_Album_Idle  x2
+  NoteBook_Tab_Missions  x2
+  NoteBook_Tab_Missions_Idle  x2
+  NoteBook_Tab_News  x2
+  NoteBook_Tab_News_Idle  x2
+  NoteBook_Tab_Profile  x4
+  NoteBook_Tab_Profile_Idle  x4
+  NoteBook_Tab_Recipes  x2
+  NoteBook_Tab_Recipes_Idle  x2
+  Notebook_Profile_Arrow_Nextlevel  x1
+  OrderCost  x2
+  OrderReceipt_BG_0  x5
+  OrderReceipt_BG_1  x5
+  OrderReceipt_SelectionOutline  x1
+  Output_UnDiscovered  x11
+  PS_InputKeys_0  x1
+  PS_InputKeys_10  x2
+  PS_InputKeys_2  x1
+  PS_InputKeys_4  x1
+  PS_InputKeys_7  x1
+  PS_InputKeys_8  x2
+  PanelBG_01  x13
+  PannelBG_2  x5
+  Parsee_Shield(Clone)  x3
+  PatientFreeze  x1
+  Pinned  x268
+  PixelateWhite  x99
+  PlayerIcon_Head  x1
+  Pot  x2
+  QTEv2_0  x5
+  QTEv2_1  x5
+  QTEv2_2  x5
+  QTEv2_3  x64
+  QTEv2_4  x22
+  QTEv3_1  x22
+  QTEv3_10  x22
+  QTEv3_11  x22
+  QTEv3_12  x25
+  QTEv3_13  x25
+  QTEv3_15  x69
+  QTEv3_16  x69
+  QTEv3_2  x25
+  QTEv3_3  x22
+  QTEv3_4  x22
+  QTEv3_5  x22
+  QTEv3_6  x22
+  QTEv3_7  x22
+  QTEv3_8  x22
+  QTEv3_9  x22
+  RecipeList_Selected  x6
+  Recipe_Available_0  x2
+  S_Gungnir  x1
+  S_GungnirLight2  x1
+  Satori_Eye(Clone)  x4
+  Scroll_2  x17
+  Scroll_3  x17
+  Scroll_4  x8
+  Scroll_5  x8
+  Scroll_6  x1
+  Scroll_7  x1
+  Select  x1
+  SelectionBox  x2
+  Shop_PriceTag  x65
+  Small Dot  x49
+  SpellDeclareFx_Frames_001  x4
+  StampFrame  x11
+  StampFrame_White  x36
+  Star  x2
+  StartButton_0  x1
+  StartButton_Hightlight  x1
+  Storage  x4
+  Storage_1_0  x2
+  Storage_1_1  x2
+  Storage_Scroll  x2
+  Storage_Tab  x20
+  Switch  x1
+  Switch_InputKeys_1  x1
+  Switch_InputKeys_8  x1
+  Table_CookSpace_0  x2
+  Table_Serve_New_0  x4
+  Table_Serve_New_1  x4
+  Table_Serve_Title  x8
+  Tags_Light  x8
+  ThrowDeliver  x1
+  Tip_Exceptional(Clone)  x3
+  Tips  x10
+  Triangle  x6
+  UIMask  x2
+  UI_night_addup_10  x2
+  UI_night_addup_13  x1
+  UI_night_addup_15  x8
+  UI_night_addup_17  x2
+  UI_night_addup_18  x1
+  UI_night_addup_22  x8
+  UI_night_addup_23  x1
+  UI_night_addup_24  x9
+  UI_night_addup_25  x9
+  UI_night_addup_28  x9
+  XBOX_InputKeys_12  x1
+  XBOX_InputKeys_14  x1
+  add  x308
+  arrow  x1
+  bg  x2
+  clear  x60
+  clear_black  x2
+  colliders_50x_23  x2
+  cook_Detail  x21
+  cross  x2
+  deskIdle  x3
+  deskSelected  x1
+  eyeBase  x1
+  eyeFire  x1
+  eyeFire2  x1
+  gotoWork  x1
+  guide2_1  x1
+  guide2_10  x1
+  guide2_11  x1
+  guide2_2  x1
+  guide2_4  x1
+  guide2_5  x2
+  guide2_6  x1
+  guide2_7  x1
+  guide2_8  x1
+  guide2_9  x1
+  guide_1  x1
+  guide_10  x1
+  guide_2  x1
+  guide_3_stick  x1
+  guide_4  x1
+  guide_5  x1
+  guide_6  x1
+  guide_7  x1
+  guide_8  x2
+  guide_9  x1
+  lamp  x5
+  name_0  x4
+  pannelBG_02  x1
+  preparation_v2  x1
+  recycler1  x1
+  recycler2  x1
+  roundedBG  x2
+  storage_BG  x2
+  white  x19
+  冴月麟-续单印记  x3
+  咲夜Eyes_0, 1  x1
+  咲夜Main_0, 1  x1
+  响子-工作服Eyes_0, 1  x1
+  响子-工作服Main_0, 1  x1
+  墨镜  x3
+  帝 奸商  x1
+  慧音-奖励  x1
+  慧音Eyes_0, 1  x1
+  慧音Main_0, 1  x1
+  托盘烧焦  x1
+  报纸卷  x1
+  时焉侑_审判之眼_0  x5
+  时焉侑_审判之眼_1  x2
+  时焉侑_审判之眼_2  x5
+  梦子Eyes_0, 1  x1
+  梦子Main_0, 1  x1
+  红雾异变再临  x1
+  资本家米斯琪  x1
+  钉子  x1
+  键山雏Eyes_0, 1  x1
+  键山雏Main_0, 1  x1
+  阿求-惩罚1  x1
+
+## 六、导出样例图（D:\SteamLibrary\steamapps\common\Touhou Mystia Izakaya\BepInEx\config\orderhelper-ui-samples）
+  导出 00_clear_3x3.png   ← PartnerStatusUp
+  导出 01_DLC1_Foods_1017(Clone)_26x26.png   ← Visual
+  导出 02_Beverages_4(Clone)_26x26.png   ← Visual
+  导出 03_CharBG_48x48.png   ← SpecialObject
+  导出 04_慧音Main_0, 1_64x64.png   ← Char
+  导出 05_慧音Eyes_0, 1_64x64.png   ← Face
+  导出 06_CharFrame_48x48.png   ← Front
+  导出 07_OrderReceipt_BG_1_32x66.png   ← OrderBG_Current
+  导出 08_Check_32x32.png   ← Food
+  导出 09_OrderReceipt_BG_0_32x66.png   ← OrderBG_Normal
+  导出 10_Button_Album_Guest_95x126_3_95x126.png   ← NameField
+  导出 11_Button_Album_Guest_95x126_1_95x126.png   ← GuestElementCompact(Clone)
+  达到上限 12 张，其余候选跳过

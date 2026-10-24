@@ -8,7 +8,7 @@ $ErrorActionPreference = 'Stop'
 
 $root    = $PSScriptRoot
 $name    = 'MystiaOrderHelper'
-$version = '1.5.0'
+$version = '1.6.7'
 $sdk     = Join-Path $DotnetRoot 'sdk\6.0.428'
 $csc     = Join-Path $sdk 'Roslyn\bincore\csc.dll'
 $dotnet  = Join-Path $DotnetRoot 'dotnet.exe'
@@ -47,6 +47,9 @@ $modules = @(
     'UnityEngine.InputLegacyModule.dll', 'Unity.InputSystem.dll',
     'UnityEngine.TextRenderingModule.dll', 'UnityEngine.UIModule.dll',
     'UnityEngine.UI.dll',
+    # Unity 2021+ 的 Texture2D.EncodeToPNG 实际定义在 ImageConversionModule 里（扩展方法形式），
+    # 缺了这个引用会报 CS1061「Texture2D 未包含 EncodeToPNG」。
+    'UnityEngine.ImageConversionModule.dll',
     'Unity.TextMeshPro.dll'
 )
 foreach ($m in $modules) {

@@ -55,11 +55,20 @@ namespace MystiaOrderHelper
             return "#" + tag;
         }
 
-        internal static string FoodText => Describe(FoodLike, FoodHate, true);
-        internal static string BevText => Describe(BevLike, BevHate, false);
+        // 今日流行的展示文本。★ 必须缓存：OnGUI 每帧要读两次（Layout + Repaint），
+        // 原来每次访问都新建 StringBuilder + 一串字符串，是每帧固定的一笔 GC 垃圾。
+        // 因此这里存的是 Refresh（0.5 秒一次）算好的结果，OnGUI 只负责贴出来。
 
-        internal static bool HasFoodPop => FoodLike.Count > 0 || FoodHate.Count > 0;
-        internal static bool HasBevPop => BevLike.Count > 0 || BevHate.Count > 0;
+        /// <summary>主面板那一行「今日流行｜菜：… 酒：…」。</summary>
+        internal static string BothText { get; private set; } = "今日流行｜菜：无    酒：无";
+
+        /// <summary>推荐框顶部那一行（料理框 / 酒水框各用一条）。</summary>
+        internal static string FoodLine { get; private set; } = "今日流行｜菜：无";
+        internal static string BevLine { get; private set; } = "今日流行｜酒：无";
+
+        private static string _foodText = "无";
+        private static string _bevText = "无";
+
 
         internal static void Refresh(SpecialGuest sample)
         {
@@ -78,6 +87,12 @@ namespace MystiaOrderHelper
                     CacheNames(BevLike, BevNames, false, sample);
                     CacheNames(BevHate, BevNames, false, sample);
                 }
+
+                _foodText = Describe(FoodLike, FoodHate, true);
+                _bevText = Describe(BevLike, BevHate, false);
+                BothText = "今日流行｜菜：" + _foodText + "    酒：" + _bevText;
+                FoodLine = "今日流行｜菜：" + _foodText;
+                BevLine = "今日流行｜酒：" + _bevText;
             }
             catch (Exception e)
             {

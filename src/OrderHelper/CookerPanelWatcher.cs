@@ -59,10 +59,17 @@ namespace MystiaOrderHelper
 
         private static WorkSceneCookingSelectionPannel _current;
 
+        /// <summary>面板状态版本号：开了、关了、换了厨具都会 +1，供上层缓存失效用。</summary>
+        internal static int Version { get; private set; }
+
         internal static void SetOpen(WorkSceneCookingSelectionPannel panel)
         {
             _current = panel;
             IsOpen = true;
+            Version++;
+
+            // 换了厨具 / 刚打开面板，推荐框必须立刻按新厨具重算，别等 0.8 秒的采集节拍。
+            OverlayBehaviour.RequestRefresh();
 
             try { CookerName = panel?.cookerName?.text ?? ""; }
             catch { CookerName = ""; }
@@ -125,6 +132,7 @@ namespace MystiaOrderHelper
         {
             _current = null;
             IsOpen = false;
+            Version++;
             CookerName = "";
             PanelRect = default;
             Buttons.Clear();
@@ -234,31 +242,45 @@ namespace MystiaOrderHelper
         /// </summary>
         internal static bool SelectIngredients(Recipe recipe)
         {
+            return SelectIngredients(recipe, null);
+        }
+
+        /// <summary>
+        /// 一键制作。extras 是推荐里算出来的加料（v1.5.5）：有加料时**跳过「导入配方」通道**，
+        /// 因为那条通道只认菜谱本身，会把加料丢掉；直接走直填 selectedIngredients，把菜谱食材和加料一起写进去。
+        /// </summary>
+        internal static bool SelectIngredients(Recipe recipe, int[] extras)
+        {
             if (!IsOpen || _current == null || recipe == null) return false;
 
-            try
+            var hasExtras = extras != null && extras.Length > 0;
+
+            // 方案 A：面板自带的「导入配方」通道。**有加料时不走这条**：它只认菜谱本身，会把加料丢掉。
+            if (!hasExtras)
             {
-                // 方案 A：面板自带的「导入配方」通道
-                _current.importedRecipe = recipe;
-                _current.hasImported = true;
+                try
+                {
+                    _current.importedRecipe = recipe;
+                    _current.hasImported = true;
 
-                _current.UpdateIngField();
-                _current.UpdateSelectedField();
-                _current.UpdateOutputField();
-                _current.UpdateRecipeField();
-                _current.UpdateAllVisual();
+                    _current.UpdateIngField();
+                    _current.UpdateSelectedField();
+                    _current.UpdateOutputField();
+                    _current.UpdateRecipeField();
+                    _current.UpdateAllVisual();
 
-                var selectedCount = CountSelected(_current);
-                var outputCount = CountOutput(_current);
+                    var selectedCount = CountSelected(_current);
+                    var outputCount = CountOutput(_current);
 
-                OrderHelperPlugin.LogSource.LogInfo(
-                    $"[OrderHelper] 导入配方 food={recipe.FoodID} name={ShowNameOf(recipe)} 选中食材={selectedCount} 可制作组合={outputCount}");
+                    OrderHelperPlugin.LogSource.LogInfo(
+                        $"[OrderHelper] 导入配方 food={recipe.FoodID} name={ShowNameOf(recipe)} 选中食材={selectedCount} 可制作组合={outputCount}");
 
-                if (selectedCount > 0 || outputCount > 0) return true;
-            }
-            catch (Exception e)
-            {
-                OrderHelperPlugin.LogSource.LogWarning("[OrderHelper] 导入配方失败: " + e.Message);
+                    if (selectedCount > 0 || outputCount > 0) return true;
+                }
+                catch (Exception e)
+                {
+                    OrderHelperPlugin.LogSource.LogWarning("[OrderHelper] 导入配方失败: " + e.Message);
+                }
             }
 
             // 方案 B：直接写面板的 selectedIngredients（ID 列表），再让它自己重新匹配
@@ -272,38 +294,81 @@ namespace MystiaOrderHelper
                     _current.selectedIngredients = list;
                 }
 
-                list.Clear();
-                for (var i = 0; i < ids.Count; i++) list.Add(ids[i]);
-
-                var instances = _current.m_SelectedInstances;
-                if (instances != null)
-                {
-                    instances.Clear();
-                    for (var i = 0; i < ids.Count; i++)
-                    {
-                        var ingredient = DataBaseCore.RefIngredient(ids[i]);
-                        if (ingredient != null) instances.Add(ingredient);
-                    }
-                }
-
-                _current.UpdateSelectedField();
-
+                // 加料按「最后加的先退」逐份试：游戏自己会算出「可做组合」列表，
+                // 每个 MatchedCookCombo 都带着 Recipe —— 这就是游戏真实的匹配结果。
+                // 只要列表里出现别的菜，就说明这味加料把配方凑成了另一道菜，丢掉它重试。
+                // 比在规划阶段靠「配方是不是子集」瞎猜准得多（v1.5.7 就是因为那个猜法太宽，
+                // 82 次撤回把加料全砍光了）。
+                var kept = hasExtras ? extras.Length : 0;
+                var droppedInCook = 0;
+                var haveUnObtainedLast = false;
                 var combos = _current.m_OutputInstances;
                 if (combos == null)
                 {
                     combos = new Il2CppSystem.Collections.Generic.List<WorkSceneCookingSelectionPannel.MatchedCookCombo>();
                     _current.m_OutputInstances = combos;
                 }
-                combos.Clear();
 
-                bool haveUnObtained;
-                _current.MatchingSelected(combos, out haveUnObtained);
+                while (true)
+                {
+                    list.Clear();
+                    for (var i = 0; i < ids.Count; i++) list.Add(ids[i]);
+                    for (var i = 0; i < kept; i++) list.Add(extras[i]);
+
+                    var instances = _current.m_SelectedInstances;
+                    if (instances != null)
+                    {
+                        instances.Clear();
+                        for (var i = 0; i < ids.Count; i++)
+                        {
+                            var ingredient = DataBaseCore.RefIngredient(ids[i]);
+                            if (ingredient != null) instances.Add(ingredient);
+                        }
+
+                        for (var i = 0; i < kept; i++)
+                        {
+                            var ingredient = DataBaseCore.RefIngredient(extras[i]);
+                            if (ingredient != null) instances.Add(ingredient);
+                        }
+                    }
+
+                    _current.UpdateSelectedField();
+
+                    combos.Clear();
+                    bool haveUnObtained;
+                    _current.MatchingSelected(combos, out haveUnObtained);
+                    haveUnObtainedLast = haveUnObtained;
+
+                    // 只有「一个组合都对不上」才退加料——那说明这些食材在游戏眼里做不出任何菜。
+                    // 「同时能做出另一道菜」**不算失败**：面板会把所有能做的菜都列出来，
+                    // 玩家自己点要做哪道（同材料两道菜本来就该由玩家选），插件不替他决定。
+                    var badCombo = combos.Count == 0;
+                    if (!badCombo || kept == 0)
+                    {
+                        if (droppedInCook > 0)
+                        {
+                            OrderHelperPlugin.LogSource.LogInfo(
+                                $"[OrderHelper] 加料后一个组合都匹配不上，已退掉 {droppedInCook} 份" +
+                                $" food={recipe.FoodID} 保留加料={kept}");
+                        }
+
+                        break;
+                    }
+
+                    kept--;
+                    droppedInCook++;
+                }
+
                 _current.UpdateOutputField();
                 _current.UpdateRecipeField();
                 _current.UpdateAllVisual();
 
+                var others = OtherDishes(combos, recipe.FoodID);
                 OrderHelperPlugin.LogSource.LogInfo(
-                    $"[OrderHelper] 直填食材 food={recipe.FoodID} 写入={ids.Count} 选中={CountSelected(_current)} 可制作组合={CountOutput(_current)} 未解锁组合={haveUnObtained}");
+                    $"[OrderHelper] 直填食材 food={recipe.FoodID} 写入={ids.Count} 加料={kept}" +
+                    $" 游戏接受的加料={ModifiersOf(combos, recipe.FoodID)}" +
+                    $" 选中={CountSelected(_current)} 可制作组合={CountOutput(_current)} 未解锁组合={haveUnObtainedLast}" +
+                    (others.Length > 0 ? " 同时可做=[" + others + "]（玩家自选）" : ""));
 
                 if (CountSelected(_current) > 0 || CountOutput(_current) > 0) return true;
             }
@@ -313,6 +378,72 @@ namespace MystiaOrderHelper
             }
 
             return SelectIngredientOneByOne(recipe);
+        }
+
+        /// <summary>
+        /// 这锅除了这道菜还能做出哪几道（逗号分隔的菜名，没有就空串）。
+        /// **只用于日志**：多出来的菜不是错误，面板会列出来让玩家自己选做哪道。
+        /// 记下来是为了以后核对「加料后到底把哪些菜也凑出来了」。
+        /// </summary>
+        private static string OtherDishes(
+            Il2CppSystem.Collections.Generic.List<WorkSceneCookingSelectionPannel.MatchedCookCombo> combos, int foodId)
+        {
+            if (combos == null || combos.Count <= 1) return "";
+
+            var names = "";
+            for (var i = 0; i < combos.Count; i++)
+            {
+                try
+                {
+                    var combo = combos[i];
+                    if (combo == null) continue;
+
+                    var r = combo.Recipe;
+                    if (r == null || r.FoodID == foodId) continue;
+
+                    var name = RecipeIndex.FoodNameOfFood(r.FoodID);
+                    names = names.Length == 0 ? name : names + "、" + name;
+                }
+                catch
+                {
+                    // 读不通就跳过，日志缺一条不影响制作。
+                }
+            }
+
+            return names;
+        }
+
+        /// <summary>
+        /// 游戏给这道菜算出了几份「额外食材」（MatchedCookCombo.Modifiers）。
+        /// 这是「加料真的被游戏吃下去了」的铁证：只写 selectedIngredients 时
+        /// 我们并不知道面板有没有把它算成加料，读这个字段就能确认。
+        /// 返回 -1 表示组合列表里没找到这道菜。
+        /// </summary>
+        private static int ModifiersOf(
+            Il2CppSystem.Collections.Generic.List<WorkSceneCookingSelectionPannel.MatchedCookCombo> combos, int foodId)
+        {
+            if (combos == null) return -1;
+
+            for (var i = 0; i < combos.Count; i++)
+            {
+                try
+                {
+                    var combo = combos[i];
+                    if (combo == null) continue;
+
+                    var r = combo.Recipe;
+                    if (r == null || r.FoodID != foodId) continue;
+
+                    var mods = combo.Modifiers;
+                    return mods == null ? 0 : mods.Length;
+                }
+                catch
+                {
+                    return -1;
+                }
+            }
+
+            return -1;
         }
 
         private static int CountSelected(WorkSceneCookingSelectionPannel panel)
